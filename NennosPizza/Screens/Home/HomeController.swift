@@ -12,12 +12,12 @@ import RxCocoa
 class HomeController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
     let viewModel = HomeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.load()
-        viewModel.pizzasWithIngredients.subscribe { pizzas in
+        viewModel.pizzas.subscribe { pizzas in
             print(pizzas)
         } onError: { (error) in
             print(error)

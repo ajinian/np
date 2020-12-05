@@ -12,26 +12,18 @@ import RxCocoa
 class HomeViewModel: ViewModel {
     
     let pizzas: BehaviorRelay<PizzaCollection> = BehaviorRelay(value: PizzaCollection())
-    let ingredients: BehaviorRelay<BasicItemCollection> = BehaviorRelay(value: BasicItemCollection())
-    let pizzasWithIngredients: BehaviorRelay<PizzaCollection> = BehaviorRelay(value: PizzaCollection())
-    let session = Session()
-    let pizzasApi = BaseApi()
-    let ingredientsApi = BaseApi()
     
-    func load() {
-        RequestBuilder(session: session, api: pizzasApi)
+    override init() {
+        super.init()
+        let pizzasRequest: Observable<PizzaCollection> = RequestBuilder(session: Session(), api: BaseApi())
             .build(paths: ["/pizzas.json"])
             .asObservable()
-            .bind(to: pizzas)
-            .disposed(by: disposeBag)
         
-        RequestBuilder(session: session, api: ingredientsApi)
+        let ingredientsRequest: Observable<BasicItemCollection> = RequestBuilder(session: Session(), api: BaseApi())
             .build(paths: ["/ingredients.json"])
             .asObservable()
-            .bind(to: ingredients)
-            .disposed(by: disposeBag)
         
-        Observable.zip(pizzas, ingredients).map { (p, i) -> PizzaCollection in
+        Observable.zip(pizzasRequest, ingredientsRequest).map { (p, i) -> PizzaCollection in
             var tempPizzas = PizzaCollection()
             tempPizzas.basePrice = p.basePrice
             for (pi, pizza) in p.pizzas.enumerated() {
@@ -45,8 +37,7 @@ class HomeViewModel: ViewModel {
             }
             return tempPizzas
         }
-        .bind(to: pizzasWithIngredients)
+        .bind(to: pizzas)
         .disposed(by: disposeBag)
-        
     }
 }
