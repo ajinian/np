@@ -28,4 +28,10 @@ struct BasicItemCollection: Codable {
             print(error)
         }
     }
+    
+    func item(with id: Int) -> BasicItemModel? {
+        collection.first { m -> Bool in
+            m.id == id
+        }
+    }
 }

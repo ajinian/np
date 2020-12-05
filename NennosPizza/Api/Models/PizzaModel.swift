@@ -12,9 +12,5 @@ struct PizzaModel: Codable {
     var name: String
     var imageUrl: URL?
     
-//    enum CodingKeys: CodingKey {
-//        case name
-//        case imageUrl
-//        case ingredients
-//    }
+    var mappedIngredients: [BasicItemModel]?
 }

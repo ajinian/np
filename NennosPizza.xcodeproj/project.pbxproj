@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		06D0CD17257B2DE800EE7754 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D0CD16257B2DE800EE7754 /* AppDelegate.swift */; };
 		06D0CD19257B2DE800EE7754 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D0CD18257B2DE800EE7754 /* SceneDelegate.swift */; };
-		06D0CD1B257B2DE800EE7754 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D0CD1A257B2DE800EE7754 /* ViewController.swift */; };
+		06D0CD1B257B2DE800EE7754 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D0CD1A257B2DE800EE7754 /* HomeController.swift */; };
 		06D0CD1E257B2DE800EE7754 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06D0CD1C257B2DE800EE7754 /* Main.storyboard */; };
 		06D0CD20257B2DE900EE7754 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06D0CD1F257B2DE900EE7754 /* Assets.xcassets */; };
 		06D0CD23257B2DE900EE7754 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06D0CD21257B2DE900EE7754 /* LaunchScreen.storyboard */; };
@@ -22,6 +22,8 @@
 		06E28BB6257BDE2D00212A50 /* BasicItemCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E28BB5257BDE2D00212A50 /* BasicItemCollection.swift */; };
 		06E28BBE257BDF1100212A50 /* PizzaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E28BBD257BDF1100212A50 /* PizzaModel.swift */; };
 		06E28BC3257BDFA300212A50 /* PizzaCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E28BC2257BDFA300212A50 /* PizzaCollection.swift */; };
+		06E28BEE257C0DE500212A50 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E28BED257C0DE500212A50 /* ViewModel.swift */; };
+		06E28BF3257C0E2A00212A50 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E28BF2257C0E2A00212A50 /* HomeViewModel.swift */; };
 		6A5ED02376B188E85D3EC972 /* Pods_NennosPizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E42D9C1D230A775F25C92414 /* Pods_NennosPizza.framework */; };
 		737C8C7821447EA0281F68C5 /* Pods_NennosPizzaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AECFBBE33C43DFCE9A3E56E /* Pods_NennosPizzaTests.framework */; };
 		C498121844B8017C08D4D493 /* Pods_NennosPizza_NennosPizzaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F42FDDB9590FE38F040B82C0 /* Pods_NennosPizza_NennosPizzaUITests.framework */; };
@@ -49,7 +51,7 @@
 		06D0CD13257B2DE800EE7754 /* NennosPizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NennosPizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06D0CD16257B2DE800EE7754 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06D0CD18257B2DE800EE7754 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		06D0CD1A257B2DE800EE7754 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		06D0CD1A257B2DE800EE7754 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		06D0CD1D257B2DE800EE7754 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		06D0CD1F257B2DE900EE7754 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06D0CD22257B2DE900EE7754 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -67,6 +69,8 @@
 		06E28BB5257BDE2D00212A50 /* BasicItemCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicItemCollection.swift; sourceTree = "<group>"; };
 		06E28BBD257BDF1100212A50 /* PizzaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaModel.swift; sourceTree = "<group>"; };
 		06E28BC2257BDFA300212A50 /* PizzaCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaCollection.swift; sourceTree = "<group>"; };
+		06E28BED257C0DE500212A50 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		06E28BF2257C0E2A00212A50 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		215285142458C0B2083D510E /* Pods-NennosPizzaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NennosPizzaTests.release.xcconfig"; path = "Target Support Files/Pods-NennosPizzaTests/Pods-NennosPizzaTests.release.xcconfig"; sourceTree = "<group>"; };
 		343F87A3114FCC54CA6B3FFB /* Pods-NennosPizza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NennosPizza.debug.xcconfig"; path = "Target Support Files/Pods-NennosPizza/Pods-NennosPizza.debug.xcconfig"; sourceTree = "<group>"; };
 		3F89600E94F34A8F23AF9D39 /* Pods-NennosPizza-NennosPizzaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NennosPizza-NennosPizzaUITests.debug.xcconfig"; path = "Target Support Files/Pods-NennosPizza-NennosPizzaUITests/Pods-NennosPizza-NennosPizzaUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -170,8 +174,9 @@
 		06D0CD9B257B2F7400EE7754 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				06D0CD1A257B2DE800EE7754 /* ViewController.swift */,
+				06E28BDA257C09DC00212A50 /* Home */,
 				06D0CD1C257B2DE800EE7754 /* Main.storyboard */,
+				06E28BED257C0DE500212A50 /* ViewModel.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -196,6 +201,15 @@
 				06E28BC2257BDFA300212A50 /* PizzaCollection.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		06E28BDA257C09DC00212A50 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				06D0CD1A257B2DE800EE7754 /* HomeController.swift */,
+				06E28BF2257C0E2A00212A50 /* HomeViewModel.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		82D7FB13CC527F14C151DE06 /* Pods */ = {
@@ -462,9 +476,11 @@
 				06E28BB0257BDDFB00212A50 /* BasicItemModel.swift in Sources */,
 				06D0CDB6257B3F2000EE7754 /* RequestBuilder.swift in Sources */,
 				06E28BBE257BDF1100212A50 /* PizzaModel.swift in Sources */,
+				06E28BEE257C0DE500212A50 /* ViewModel.swift in Sources */,
 				06E28BB6257BDE2D00212A50 /* BasicItemCollection.swift in Sources */,
-				06D0CD1B257B2DE800EE7754 /* ViewController.swift in Sources */,
+				06D0CD1B257B2DE800EE7754 /* HomeController.swift in Sources */,
 				06D0CDA7257B3DF500EE7754 /* BaseApi.swift in Sources */,
+				06E28BF3257C0E2A00212A50 /* HomeViewModel.swift in Sources */,
 				06E28BC3257BDFA300212A50 /* PizzaCollection.swift in Sources */,
 				06D0CDB1257B3ED400EE7754 /* Session.swift in Sources */,
 				06D0CD17257B2DE800EE7754 /* AppDelegate.swift in Sources */,
