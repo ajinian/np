@@ -15,6 +15,13 @@
 		06D0CD23257B2DE900EE7754 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06D0CD21257B2DE900EE7754 /* LaunchScreen.storyboard */; };
 		06D0CD2E257B2DE900EE7754 /* NennosPizzaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D0CD2D257B2DE900EE7754 /* NennosPizzaTests.swift */; };
 		06D0CD39257B2DE900EE7754 /* NennosPizzaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D0CD38257B2DE900EE7754 /* NennosPizzaUITests.swift */; };
+		06D0CDA7257B3DF500EE7754 /* BaseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D0CDA6257B3DF500EE7754 /* BaseApi.swift */; };
+		06D0CDB1257B3ED400EE7754 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D0CDB0257B3ED400EE7754 /* Session.swift */; };
+		06D0CDB6257B3F2000EE7754 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D0CDB5257B3F2000EE7754 /* RequestBuilder.swift */; };
+		06E28BB0257BDDFB00212A50 /* BasicItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E28BAF257BDDFB00212A50 /* BasicItemModel.swift */; };
+		06E28BB6257BDE2D00212A50 /* BasicItemCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E28BB5257BDE2D00212A50 /* BasicItemCollection.swift */; };
+		06E28BBE257BDF1100212A50 /* PizzaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E28BBD257BDF1100212A50 /* PizzaModel.swift */; };
+		06E28BC3257BDFA300212A50 /* PizzaCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E28BC2257BDFA300212A50 /* PizzaCollection.swift */; };
 		6A5ED02376B188E85D3EC972 /* Pods_NennosPizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E42D9C1D230A775F25C92414 /* Pods_NennosPizza.framework */; };
 		737C8C7821447EA0281F68C5 /* Pods_NennosPizzaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AECFBBE33C43DFCE9A3E56E /* Pods_NennosPizzaTests.framework */; };
 		C498121844B8017C08D4D493 /* Pods_NennosPizza_NennosPizzaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F42FDDB9590FE38F040B82C0 /* Pods_NennosPizza_NennosPizzaUITests.framework */; };
@@ -53,6 +60,13 @@
 		06D0CD34257B2DE900EE7754 /* NennosPizzaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NennosPizzaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06D0CD38257B2DE900EE7754 /* NennosPizzaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NennosPizzaUITests.swift; sourceTree = "<group>"; };
 		06D0CD3A257B2DE900EE7754 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06D0CDA6257B3DF500EE7754 /* BaseApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApi.swift; sourceTree = "<group>"; };
+		06D0CDB0257B3ED400EE7754 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		06D0CDB5257B3F2000EE7754 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		06E28BAF257BDDFB00212A50 /* BasicItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicItemModel.swift; sourceTree = "<group>"; };
+		06E28BB5257BDE2D00212A50 /* BasicItemCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicItemCollection.swift; sourceTree = "<group>"; };
+		06E28BBD257BDF1100212A50 /* PizzaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaModel.swift; sourceTree = "<group>"; };
+		06E28BC2257BDFA300212A50 /* PizzaCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaCollection.swift; sourceTree = "<group>"; };
 		215285142458C0B2083D510E /* Pods-NennosPizzaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NennosPizzaTests.release.xcconfig"; path = "Target Support Files/Pods-NennosPizzaTests/Pods-NennosPizzaTests.release.xcconfig"; sourceTree = "<group>"; };
 		343F87A3114FCC54CA6B3FFB /* Pods-NennosPizza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NennosPizza.debug.xcconfig"; path = "Target Support Files/Pods-NennosPizza/Pods-NennosPizza.debug.xcconfig"; sourceTree = "<group>"; };
 		3F89600E94F34A8F23AF9D39 /* Pods-NennosPizza-NennosPizzaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NennosPizza-NennosPizzaUITests.debug.xcconfig"; path = "Target Support Files/Pods-NennosPizza-NennosPizzaUITests/Pods-NennosPizza-NennosPizzaUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,8 +179,23 @@
 		06D0CD9C257B2F8000EE7754 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				06D0CDBA257B3FF200EE7754 /* Models */,
+				06D0CDA6257B3DF500EE7754 /* BaseApi.swift */,
+				06D0CDB0257B3ED400EE7754 /* Session.swift */,
+				06D0CDB5257B3F2000EE7754 /* RequestBuilder.swift */,
 			);
 			path = Api;
+			sourceTree = "<group>";
+		};
+		06D0CDBA257B3FF200EE7754 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				06E28BAF257BDDFB00212A50 /* BasicItemModel.swift */,
+				06E28BB5257BDE2D00212A50 /* BasicItemCollection.swift */,
+				06E28BBD257BDF1100212A50 /* PizzaModel.swift */,
+				06E28BC2257BDFA300212A50 /* PizzaCollection.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		82D7FB13CC527F14C151DE06 /* Pods */ = {
@@ -430,7 +459,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06E28BB0257BDDFB00212A50 /* BasicItemModel.swift in Sources */,
+				06D0CDB6257B3F2000EE7754 /* RequestBuilder.swift in Sources */,
+				06E28BBE257BDF1100212A50 /* PizzaModel.swift in Sources */,
+				06E28BB6257BDE2D00212A50 /* BasicItemCollection.swift in Sources */,
 				06D0CD1B257B2DE800EE7754 /* ViewController.swift in Sources */,
+				06D0CDA7257B3DF500EE7754 /* BaseApi.swift in Sources */,
+				06E28BC3257BDFA300212A50 /* PizzaCollection.swift in Sources */,
+				06D0CDB1257B3ED400EE7754 /* Session.swift in Sources */,
 				06D0CD17257B2DE800EE7754 /* AppDelegate.swift in Sources */,
 				06D0CD19257B2DE800EE7754 /* SceneDelegate.swift in Sources */,
 			);
