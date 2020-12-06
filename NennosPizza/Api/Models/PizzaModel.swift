@@ -23,4 +23,13 @@ struct PizzaModel: Codable {
         }
         return nil
     }
+    
+    var price: Double {
+        if let mappedIngredients = mappedIngredients {
+            return mappedIngredients.reduce(0) { (r, m) -> Double in
+                r + m.price
+            }
+        }
+        return 0
+    }
 }

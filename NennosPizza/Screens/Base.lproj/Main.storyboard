@@ -121,6 +121,7 @@
                                             <outlet property="ingredientsLabel" destination="ImD-AI-PPY" id="JMj-wZ-atn"/>
                                             <outlet property="nameLabel" destination="1g5-Kp-Jmj" id="LdF-Qq-eNn"/>
                                             <outlet property="pizzaImage" destination="Mql-y8-kg5" id="gkn-js-lbp"/>
+                                            <outlet property="priceButton" destination="9bM-vg-WKq" id="RkI-Ka-OYq"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

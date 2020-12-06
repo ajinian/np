@@ -8,8 +8,8 @@
 import Foundation
 
 struct PizzaCollection: Codable {
-    var basePrice: Double = 0
-    var pizzas: [PizzaModel] = []
+    var basePrice: Double
+    var pizzas: [PizzaModel]
     
     init() {
         basePrice = 0

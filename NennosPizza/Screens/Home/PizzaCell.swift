@@ -12,6 +12,7 @@ class PizzaCell: UICollectionViewCell {
     @IBOutlet weak var pizzaImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ingredientsLabel: UILabel!
+    @IBOutlet weak var priceButton: Button!
     
     override func prepareForReuse() {
         pizzaImage.image = UIImage(named: "pizza_placeholder")
