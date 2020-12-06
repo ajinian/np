@@ -14,6 +14,7 @@ class HomeController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     let viewModel = HomeViewModel()
+    @IBOutlet weak var customPizzaButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

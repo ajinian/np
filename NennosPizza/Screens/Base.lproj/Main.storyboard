@@ -126,11 +126,21 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNN-0F-bQZ">
+                                <rect key="frame" x="340" y="788" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="LDK-5P-0mT"/>
+                                    <constraint firstAttribute="height" constant="50" id="jTA-RZ-vrs"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="pizza_plus"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xNN-0F-bQZ" secondAttribute="trailing" constant="24" id="6f3-3l-SJN"/>
                             <constraint firstItem="19l-bX-hww" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7j2-se-DuF"/>
+                            <constraint firstItem="xNN-0F-bQZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-24" id="IOx-B7-xOy"/>
                             <constraint firstItem="19l-bX-hww" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jDE-mz-gZd"/>
                             <constraint firstItem="19l-bX-hww" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="q0x-zF-loH"/>
                             <constraint firstItem="19l-bX-hww" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="qwV-PF-C6Y"/>
@@ -139,6 +149,7 @@
                     <navigationItem key="navigationItem" id="2Uc-oc-5o1"/>
                     <connections>
                         <outlet property="collectionView" destination="19l-bX-hww" id="0SU-zq-6De"/>
+                        <outlet property="customPizzaButton" destination="xNN-0F-bQZ" id="5yh-mc-cqi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -149,6 +160,7 @@
     <resources>
         <image name="bg_wood" width="480" height="405.33334350585938"/>
         <image name="ic_cart_button" width="24" height="24"/>
+        <image name="pizza_plus" width="170" height="166.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
