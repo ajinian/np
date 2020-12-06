@@ -17,6 +17,7 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setLeftAlignedNavigationItemTitle(text: "Nenno's Pizza")
         collectionView.delegate = self
         viewModel.pizzas.subscribe { pizzas in
             print(pizzas)
@@ -29,6 +30,7 @@ class HomeController: UIViewController {
         }.bind(to: collectionView.rx.items(cellIdentifier: "PizzaCell", cellType: PizzaCell.self)) { (row, element, cell) in
             self.viewModel.name(at: row).bind(to: cell.nameLabel.rx.text).disposed(by: self.viewModel.disposeBag)
             self.viewModel.ingredients(at: row).bind(to: cell.ingredientsLabel.rx.text).disposed(by: self.viewModel.disposeBag)
+            self.viewModel.price(at: row).bind(to: cell.priceButton.rx.title(for: .normal)).disposed(by: self.viewModel.disposeBag)
             if let imageRequest = self.viewModel.productImage(at: row) {
                 imageRequest.bind(to: cell.pizzaImage.rx.image).disposed(by: self.viewModel.disposeBag)
             }
