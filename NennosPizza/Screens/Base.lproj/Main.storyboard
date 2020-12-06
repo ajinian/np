@@ -36,7 +36,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="19l-bX-hww">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="EKJ-aM-Uts">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="EKJ-aM-Uts">
                                     <size key="itemSize" width="414" height="369"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -51,7 +51,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_wood" translatesAutoresizingMaskIntoConstraints="NO" id="4z7-bc-7TI">
-                                                    <rect key="frame" x="0.0" y="0.0" width="480" height="405.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="369"/>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mql-y8-kg5">
                                                     <rect key="frame" x="57" y="34.5" width="300" height="300"/>
@@ -107,13 +107,15 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="4z7-bc-7TI" firstAttribute="top" secondItem="DVY-71-Uc7" secondAttribute="top" id="92l-Xz-0lx"/>
+                                                <constraint firstAttribute="trailing" secondItem="4z7-bc-7TI" secondAttribute="trailing" id="1Jv-Oh-pvt"/>
+                                                <constraint firstAttribute="bottom" secondItem="4z7-bc-7TI" secondAttribute="bottom" id="5Ox-7N-riI"/>
                                                 <constraint firstItem="Mql-y8-kg5" firstAttribute="centerX" secondItem="DVY-71-Uc7" secondAttribute="centerX" id="BHS-er-0QV"/>
-                                                <constraint firstItem="4z7-bc-7TI" firstAttribute="leading" secondItem="DVY-71-Uc7" secondAttribute="leading" id="BoY-zX-i5d"/>
                                                 <constraint firstItem="Mql-y8-kg5" firstAttribute="centerY" secondItem="DVY-71-Uc7" secondAttribute="centerY" id="ELI-R8-9ij"/>
                                                 <constraint firstItem="MNf-3g-IGB" firstAttribute="leading" secondItem="DVY-71-Uc7" secondAttribute="leading" id="Od3-1j-FSj"/>
                                                 <constraint firstAttribute="bottom" secondItem="MNf-3g-IGB" secondAttribute="bottom" id="YAC-Cb-Bwc"/>
+                                                <constraint firstItem="4z7-bc-7TI" firstAttribute="leading" secondItem="DVY-71-Uc7" secondAttribute="leading" id="fkJ-sh-d8d"/>
                                                 <constraint firstAttribute="trailing" secondItem="MNf-3g-IGB" secondAttribute="trailing" id="j2j-2n-UDk"/>
+                                                <constraint firstItem="4z7-bc-7TI" firstAttribute="top" secondItem="DVY-71-Uc7" secondAttribute="top" id="qDB-Zz-8Ta"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="414" height="369"/>
