@@ -61,10 +61,10 @@
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MNf-3g-IGB" userLabel="Bottom Container">
-                                                    <rect key="frame" x="0.0" y="219" width="414" height="150"/>
+                                                    <rect key="frame" x="0.0" y="194" width="414" height="175"/>
                                                     <subviews>
                                                         <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yqp-lP-qYW" userLabel="Background">
-                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="175"/>
                                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1g5-Kp-Jmj">
@@ -79,19 +79,22 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bM-vg-WKq">
-                                                            <rect key="frame" x="16" y="106" width="78" height="24"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bM-vg-WKq" customClass="Button" customModule="NennosPizza" customModuleProvider="target">
+                                                            <rect key="frame" x="24" y="115" width="77" height="40"/>
+                                                            <color key="backgroundColor" red="1" green="0.79736617809999999" blue="0.15073233389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <state key="normal" title="Button" image="ic_cart_button"/>
+                                                            <inset key="contentEdgeInsets" minX="10" minY="8" maxX="10" maxY="8"/>
+                                                            <state key="normal" title="$10" image="ic_cart_button"/>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9bM-vg-WKq" secondAttribute="trailing" constant="20" symbolic="YES" id="0jh-oe-0mJ"/>
-                                                        <constraint firstItem="9bM-vg-WKq" firstAttribute="leading" secondItem="MNf-3g-IGB" secondAttribute="leading" constant="16" id="4ro-rW-OZe"/>
+                                                        <constraint firstItem="9bM-vg-WKq" firstAttribute="leading" secondItem="MNf-3g-IGB" secondAttribute="leading" constant="24" id="4ro-rW-OZe"/>
                                                         <constraint firstAttribute="bottom" secondItem="Yqp-lP-qYW" secondAttribute="bottom" id="5b6-MG-0ii"/>
                                                         <constraint firstItem="ImD-AI-PPY" firstAttribute="leading" secondItem="MNf-3g-IGB" secondAttribute="leading" constant="24" id="8e4-Dh-zqj"/>
                                                         <constraint firstItem="Yqp-lP-qYW" firstAttribute="top" secondItem="MNf-3g-IGB" secondAttribute="top" id="MwM-7A-tWB"/>
-                                                        <constraint firstAttribute="height" constant="150" id="Nsp-wT-EeD"/>
+                                                        <constraint firstAttribute="height" constant="175" id="Nsp-wT-EeD"/>
                                                         <constraint firstItem="1g5-Kp-Jmj" firstAttribute="top" secondItem="MNf-3g-IGB" secondAttribute="top" constant="20" id="VHy-od-sPu"/>
                                                         <constraint firstAttribute="bottom" secondItem="9bM-vg-WKq" secondAttribute="bottom" constant="20" id="Yom-rN-PNZ"/>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ImD-AI-PPY" secondAttribute="trailing" constant="20" symbolic="YES" id="ZnG-WT-ocL"/>
