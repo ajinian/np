@@ -17,6 +17,8 @@ class Session: SessionProtocol {
     
     init() {
         let config: URLSessionConfiguration = .default
+        config.urlCache = URLCache.shared
+        config.requestCachePolicy = .returnCacheDataDontLoad
         config.httpAdditionalHeaders = [
             "Accept" : "application/json",
             "Content-Type" : "application/json"

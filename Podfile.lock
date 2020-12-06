@@ -1,26 +1,35 @@
 PODS:
+  - Nuke (9.2.0)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
+  - RxNuke (1.0.1):
+    - Nuke (~> 9.0)
+    - RxSwift (~> 5.1.0)
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
 
 DEPENDENCIES:
   - RxCocoa
+  - RxNuke
   - RxSwift
 
 SPEC REPOS:
   trunk:
+    - Nuke
     - RxCocoa
+    - RxNuke
     - RxRelay
     - RxSwift
 
 SPEC CHECKSUMS:
+  Nuke: 1394e48b0940e01dd20f52ac56b121ab154e370d
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxNuke: 10314eff18b5e7cf961298b265507deafcdcdef3
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
 
-PODFILE CHECKSUM: c93a344296537a2f43cd29300739a91bd3354833
+PODFILE CHECKSUM: 88416a0ee1e0e55bcd1a3810847541ecd2ab1467
 
 COCOAPODS: 1.10.0

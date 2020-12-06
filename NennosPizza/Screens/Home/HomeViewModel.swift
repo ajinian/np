@@ -8,6 +8,8 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import Nuke
+import RxNuke
 
 class HomeViewModel: ViewModel {
     
@@ -39,5 +41,32 @@ class HomeViewModel: ViewModel {
         }
         .bind(to: pizzas)
         .disposed(by: disposeBag)
+    }
+    
+    func name(at index: Int) -> Observable<String> {
+        return Observable.create { [weak self] subscriber -> Disposable in
+            guard let s = self else { return Disposables.create() }
+            subscriber.onNext(s.pizzas.value.pizzas[index].name)
+            return Disposables.create()
+        }
+    }
+    
+    func ingredients(at index: Int) -> Observable<String?> {
+        return Observable.create { [weak self] subscriber -> Disposable in
+            guard let s = self else { return Disposables.create() }
+            subscriber.onNext(s.pizzas.value.pizzas[index].ingredientNames)
+            return Disposables.create()
+        }
+    }
+    
+    func productImage(at index: Int) -> Observable<UIImage>? {
+        if let url = pizzas.value.pizzas[index].imageUrl {
+            return ImagePipeline.shared.rx.loadImage(with: url).asObservable().catchError { _ in
+                .empty()
+            }.map { response -> UIImage in
+                response.image
+            }
+        }
+        return nil
     }
 }

@@ -8,6 +8,7 @@ target 'NennosPizza' do
   # Pods for NennosPizza
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'RxNuke'
   
   target 'NennosPizzaTests' do
     inherit! :search_paths

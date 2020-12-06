@@ -13,4 +13,14 @@ struct PizzaModel: Codable {
     var imageUrl: URL?
     
     var mappedIngredients: [BasicItemModel]?
+    
+    var ingredientNames: String? {
+        if let mappedIngredients = mappedIngredients {
+            return mappedIngredients.map { model -> String in
+                model.name
+            }
+            .joined(separator: ", ")
+        }
+        return nil
+    }
 }

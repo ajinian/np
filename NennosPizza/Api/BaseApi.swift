@@ -21,5 +21,7 @@ protocol ApiProtocol {
 class BaseApi: ApiProtocol {
     var baseUrl = URL(string: "https://doclerlabs.github.io/mobile-native-challenge")!
     var httpMethod: HttpMethod = .get
-    var cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy
+    var cachePolicy: URLRequest.CachePolicy {
+        .useProtocolCachePolicy
+    }
 }
