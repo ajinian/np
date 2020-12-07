@@ -19,7 +19,6 @@ class HomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setLeftAlignedNavigationItemTitle(text: "Nenno's Pizza")
-        
         collectionView.delegate = self
         viewModel.pizzas.subscribe { pizzas in
             print(pizzas)
