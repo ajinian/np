@@ -18,7 +18,8 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setLeftAlignedNavigationItemTitle(text: "Nenno's Pizza")
+        setLeftAlignedNavigationItemTitle(text: "Nenno's Pizza")
+        
         collectionView.delegate = self
         viewModel.pizzas.subscribe { pizzas in
             print(pizzas)
@@ -37,6 +38,13 @@ class HomeController: UIViewController {
             }
 
         }.disposed(by: viewModel.disposeBag)
+        
+        let cartButton = UIBarButtonItem(image: UIImage(named: "ic_cart_navbar"), style: .plain, target: self, action: #selector(goToCart))
+        self.navigationItem.rightBarButtonItem = cartButton
+    }
+    
+    @objc func goToCart() {
+        print("test")
     }
 }
 
