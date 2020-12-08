@@ -15,4 +15,8 @@ struct PizzaCollection: Codable {
         basePrice = 0
         pizzas = []
     }
+    
+    func price(at index: Int) -> Double {
+        pizzas[index].price + basePrice
+    }
 }

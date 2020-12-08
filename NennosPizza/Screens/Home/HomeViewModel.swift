@@ -73,7 +73,7 @@ class HomeViewModel: ViewModel {
     func price(at index: Int) -> Observable<String> {
         return Observable.create { [weak self] subscriber -> Disposable in
             guard let s = self else { return Disposables.create() }
-            let total = s.pizzas.value.pizzas[index].price + s.pizzas.value.basePrice
+            let total = s.pizzas.value.price(at: index)
             subscriber.onNext(s.convert(amount: total))
             return Disposables.create()
         }
