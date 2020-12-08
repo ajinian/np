@@ -38,7 +38,12 @@ class HomeController: UIViewController {
 
         }.disposed(by: viewModel.disposeBag)
         
-        let cartButton = UIBarButtonItem(image: UIImage(named: "ic_cart_navbar"), style: .plain, target: self, action: #selector(goToCart))
+        let button = BatchButton(frame: CGRect(x: 0, y: 0, width: 18, height: 16))
+        button.showBatch()
+        button.setImage(UIImage(named: "ic_cart_navbar"), for: .normal)
+        button.tintColor = UIColor(displayP3Red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
+        let cartButton = UIBarButtonItem(customView: button)
+        cartButton.tintColor = UIColor(displayP3Red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
         self.navigationItem.rightBarButtonItem = cartButton
     }
     
