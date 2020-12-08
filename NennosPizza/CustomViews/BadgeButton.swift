@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BatchButton: UIButton {
+class BadgeButton: UIButton {
     
     private let label = UILabel(frame: CGRect(x: -25, y: 1, width: 20, height: 20))
     private var batchNumber: Int = 0

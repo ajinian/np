@@ -38,7 +38,7 @@ class HomeController: UIViewController {
 
         }.disposed(by: viewModel.disposeBag)
         
-        let button = BatchButton(frame: CGRect(x: 0, y: 0, width: 18, height: 16))
+        let button = BadgeButton(frame: CGRect(x: 0, y: 0, width: 18, height: 16))
         button.showBatch()
         button.setImage(UIImage(named: "ic_cart_navbar"), for: .normal)
         button.tintColor = UIColor(displayP3Red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
