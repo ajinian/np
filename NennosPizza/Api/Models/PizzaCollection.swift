@@ -19,4 +19,8 @@ struct PizzaCollection: Codable {
     func price(at index: Int) -> Double {
         pizzas[index].price + basePrice
     }
+    
+    mutating func add(pizza: PizzaModel) {
+        pizzas.append(pizza)
+    }
 }

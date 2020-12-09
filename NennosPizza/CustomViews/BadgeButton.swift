@@ -9,32 +9,37 @@ import UIKit
 
 class BadgeButton: UIButton {
     
-    private let label = UILabel(frame: CGRect(x: -25, y: 1, width: 20, height: 20))
-    private var batchNumber: Int = 0
+    let badgeLabel: UILabel
+    
+    private var badgeNumber: Int = 0
     
     required init?(coder: NSCoder) {
+        badgeLabel = UILabel(frame: CGRect(x: -25, y: 1, width: 20, height: 20))
         super.init(coder: coder)
+        showBadge()
     }
     
     override init(frame: CGRect) {
+        badgeLabel = UILabel(frame: CGRect(x: -25, y: 1, width: frame.size.width, height: frame.size.height))
         super.init(frame: frame)
-    }
-    
-    func showBatch() {
-        label.layer.borderColor = UIColor.clear.cgColor
-        label.layer.borderWidth = 2
-        label.layer.cornerRadius = label.bounds.size.height / 2
-        label.textAlignment = .center
-        label.layer.masksToBounds = true
-        label.font = UIFont.systemFont(ofSize: 10, weight: UIFont.Weight.bold)
-        label.textColor = .white
-        label.backgroundColor = UIColor(displayP3Red: 1, green: 0.31, blue: 0.27, alpha: 1.0)
-        label.text = String(batchNumber)
-        addSubview(label)
+        showBadge()
     }
     
     func increaseBatchNumber(by: Int) {
-        batchNumber += by
-        label.text = String(batchNumber)
+        badgeNumber += by
+        badgeLabel.text = String(badgeNumber)
+    }
+    
+    private func showBadge() {
+        badgeLabel.layer.borderColor = UIColor.clear.cgColor
+        badgeLabel.layer.borderWidth = 2
+        badgeLabel.layer.cornerRadius = badgeLabel.bounds.size.height / 2
+        badgeLabel.textAlignment = .center
+        badgeLabel.layer.masksToBounds = true
+        badgeLabel.font = UIFont.systemFont(ofSize: 10, weight: UIFont.Weight.bold)
+        badgeLabel.textColor = .white
+        badgeLabel.backgroundColor = UIColor(displayP3Red: 1, green: 0.31, blue: 0.27, alpha: 1.0)
+        badgeLabel.text = String(badgeNumber)
+        addSubview(badgeLabel)
     }
 }

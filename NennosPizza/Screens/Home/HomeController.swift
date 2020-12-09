@@ -35,16 +35,23 @@ class HomeController: UIViewController {
             if let imageRequest = self.viewModel.productImage(at: row) {
                 imageRequest.bind(to: cell.pizzaImage.rx.image).disposed(by: self.viewModel.disposeBag)
             }
-
+            cell.priceButton.rx.tap.subscribe { [weak self] _ in
+                if let s = self {
+                    Cart.shared.add(pizza: s.viewModel.pizza(at: row))
+                }
+            }.disposed(by: self.viewModel.disposeBag)
         }.disposed(by: viewModel.disposeBag)
         
         let button = BadgeButton(frame: CGRect(x: 0, y: 0, width: 18, height: 16))
-        button.showBatch()
         button.setImage(UIImage(named: "ic_cart_navbar"), for: .normal)
         button.tintColor = UIColor(displayP3Red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
         let cartButton = UIBarButtonItem(customView: button)
-        cartButton.tintColor = UIColor(displayP3Red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
         self.navigationItem.rightBarButtonItem = cartButton
+        
+        
+        Cart.shared.items.map { (_, _, numItems) in String(numItems) }
+        .bind(to: button.badgeLabel.rx.text)
+        .disposed(by: viewModel.disposeBag)
     }
     
     @objc func goToCart() {
@@ -58,4 +65,3 @@ extension HomeController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: collectionViewSize, height: collectionViewSize - 25)
     }
 }
-
