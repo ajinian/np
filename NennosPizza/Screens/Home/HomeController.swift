@@ -38,6 +38,7 @@ class HomeController: UIViewController {
             cell.priceButton.rx.tap.subscribe { [weak self] _ in
                 if let s = self {
                     Cart.shared.add(pizza: s.viewModel.pizza(at: row))
+                    NotificationBanner.show("Added to Cart")
                 }
             }.disposed(by: self.viewModel.disposeBag)
         }.disposed(by: viewModel.disposeBag)
