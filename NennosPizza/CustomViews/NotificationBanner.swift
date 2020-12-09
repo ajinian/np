@@ -12,7 +12,7 @@ class NotificationBanner {
     
     static let labelLeftMarging = CGFloat(16)
     static let labelTopMargin = CGFloat(24)
-    static let animateDuration = 0.5
+    static let animateDuration = 0.2
     static let bannerAppearanceDuration: TimeInterval = 3
     static var isDisplayed:Bool = false
   
