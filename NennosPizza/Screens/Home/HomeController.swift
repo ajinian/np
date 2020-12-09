@@ -31,16 +31,10 @@ class HomeController: UIViewController {
         }.bind(to: collectionView.rx.items(cellIdentifier: "PizzaCell", cellType: PizzaCell.self)) { (row, element, cell) in
             self.viewModel.name(at: row).bind(to: cell.nameLabel.rx.text).disposed(by: self.viewModel.disposeBag)
             self.viewModel.ingredients(at: row).bind(to: cell.ingredientsLabel.rx.text).disposed(by: self.viewModel.disposeBag)
-            self.viewModel.price(at: row).bind(to: cell.priceButton.rx.title(for: .normal)).disposed(by: self.viewModel.disposeBag)
+            self.viewModel.price(at: row).bind(to: cell.priceTagLabel.rx.text).disposed(by: self.viewModel.disposeBag)
             if let imageRequest = self.viewModel.productImage(at: row) {
                 imageRequest.bind(to: cell.pizzaImage.rx.image).disposed(by: self.viewModel.disposeBag)
             }
-            cell.priceButton.rx.tap.subscribe { [weak self] _ in
-                if let s = self {
-                    Cart.shared.add(pizza: s.viewModel.pizza(at: row))
-                    NotificationBanner.show("Added to Cart")
-                }
-            }.disposed(by: self.viewModel.disposeBag)
         }.disposed(by: viewModel.disposeBag)
         
         let button = BadgeButton(frame: CGRect(x: 0, y: 0, width: 18, height: 16))

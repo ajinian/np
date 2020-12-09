@@ -27,7 +27,6 @@ class Cart {
     func add(pizza: PizzaModel) {
         pizzas.add(pizza: pizza)
         emit()
-        print(pizzas)
     }
     
     private func emit() {

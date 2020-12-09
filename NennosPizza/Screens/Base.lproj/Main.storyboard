@@ -79,28 +79,49 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bM-vg-WKq" customClass="Button" customModule="NennosPizza" customModuleProvider="target">
-                                                            <rect key="frame" x="24" y="115" width="77" height="40"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kki-er-FdJ">
+                                                            <rect key="frame" x="24" y="115" width="97" height="40"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_cart_button" translatesAutoresizingMaskIntoConstraints="NO" id="q4h-yQ-b1a">
+                                                                    <rect key="frame" x="8" y="8" width="24" height="24"/>
+                                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="24" id="We6-RJ-oJW"/>
+                                                                        <constraint firstAttribute="height" constant="24" id="xxa-jy-F9B"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$10.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qcv-D0-Chb">
+                                                                    <rect key="frame" x="32" y="8" width="57" height="24"/>
+                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
                                                             <color key="backgroundColor" red="1" green="0.79736617809999999" blue="0.15073233389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <inset key="contentEdgeInsets" minX="10" minY="8" maxX="10" maxY="8"/>
-                                                            <state key="normal" title="$10" image="ic_cart_button"/>
-                                                        </button>
+                                                            <constraints>
+                                                                <constraint firstItem="q4h-yQ-b1a" firstAttribute="top" secondItem="Kki-er-FdJ" secondAttribute="top" constant="8" id="IPE-eZ-Q28"/>
+                                                                <constraint firstAttribute="bottom" secondItem="q4h-yQ-b1a" secondAttribute="bottom" constant="8" id="S2H-qm-Rj2"/>
+                                                                <constraint firstItem="Qcv-D0-Chb" firstAttribute="top" secondItem="Kki-er-FdJ" secondAttribute="top" constant="8" id="VI6-rs-Eog"/>
+                                                                <constraint firstItem="q4h-yQ-b1a" firstAttribute="leading" secondItem="Kki-er-FdJ" secondAttribute="leading" constant="8" id="XSs-pO-GSt"/>
+                                                                <constraint firstAttribute="height" constant="40" id="abF-dy-vAE"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Qcv-D0-Chb" secondAttribute="bottom" constant="8" id="fhR-a2-8Qp"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Qcv-D0-Chb" secondAttribute="trailing" constant="8" id="q3F-MI-7xg"/>
+                                                                <constraint firstItem="Qcv-D0-Chb" firstAttribute="leading" secondItem="q4h-yQ-b1a" secondAttribute="trailing" id="x5d-GO-yFl"/>
+                                                            </constraints>
+                                                        </view>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9bM-vg-WKq" secondAttribute="trailing" constant="20" symbolic="YES" id="0jh-oe-0mJ"/>
-                                                        <constraint firstItem="9bM-vg-WKq" firstAttribute="leading" secondItem="MNf-3g-IGB" secondAttribute="leading" constant="24" id="4ro-rW-OZe"/>
                                                         <constraint firstAttribute="bottom" secondItem="Yqp-lP-qYW" secondAttribute="bottom" id="5b6-MG-0ii"/>
                                                         <constraint firstItem="ImD-AI-PPY" firstAttribute="leading" secondItem="MNf-3g-IGB" secondAttribute="leading" constant="24" id="8e4-Dh-zqj"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Kki-er-FdJ" secondAttribute="bottom" constant="20" id="Bwp-3J-piV"/>
                                                         <constraint firstItem="Yqp-lP-qYW" firstAttribute="top" secondItem="MNf-3g-IGB" secondAttribute="top" id="MwM-7A-tWB"/>
                                                         <constraint firstAttribute="height" constant="175" id="Nsp-wT-EeD"/>
                                                         <constraint firstItem="1g5-Kp-Jmj" firstAttribute="top" secondItem="MNf-3g-IGB" secondAttribute="top" constant="20" id="VHy-od-sPu"/>
-                                                        <constraint firstAttribute="bottom" secondItem="9bM-vg-WKq" secondAttribute="bottom" constant="20" id="Yom-rN-PNZ"/>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ImD-AI-PPY" secondAttribute="trailing" constant="20" symbolic="YES" id="ZnG-WT-ocL"/>
                                                         <constraint firstItem="Yqp-lP-qYW" firstAttribute="leading" secondItem="MNf-3g-IGB" secondAttribute="leading" id="ces-W7-FT7"/>
                                                         <constraint firstAttribute="trailing" secondItem="Yqp-lP-qYW" secondAttribute="trailing" id="fhw-6j-SSr"/>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1g5-Kp-Jmj" secondAttribute="trailing" constant="20" symbolic="YES" id="rzN-M9-Qyl"/>
+                                                        <constraint firstItem="Kki-er-FdJ" firstAttribute="leading" secondItem="MNf-3g-IGB" secondAttribute="leading" constant="24" id="sSo-KP-4ge"/>
                                                         <constraint firstItem="ImD-AI-PPY" firstAttribute="top" secondItem="1g5-Kp-Jmj" secondAttribute="bottom" constant="8" id="uyI-rP-z3Y"/>
                                                         <constraint firstItem="1g5-Kp-Jmj" firstAttribute="leading" secondItem="MNf-3g-IGB" secondAttribute="leading" constant="24" id="yNa-ph-Ubl"/>
                                                     </constraints>
@@ -123,7 +144,8 @@
                                             <outlet property="ingredientsLabel" destination="ImD-AI-PPY" id="JMj-wZ-atn"/>
                                             <outlet property="nameLabel" destination="1g5-Kp-Jmj" id="LdF-Qq-eNn"/>
                                             <outlet property="pizzaImage" destination="Mql-y8-kg5" id="gkn-js-lbp"/>
-                                            <outlet property="priceButton" destination="9bM-vg-WKq" id="RkI-Ka-OYq"/>
+                                            <outlet property="priceTagLabel" destination="Qcv-D0-Chb" id="QFi-z6-SRC"/>
+                                            <outlet property="priceTagView" destination="Kki-er-FdJ" id="Yn7-uA-lyT"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
