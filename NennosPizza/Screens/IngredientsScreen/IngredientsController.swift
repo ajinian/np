@@ -19,8 +19,14 @@ class IngredientsController: UIViewController {
         collectionView.delegate = self
         viewModel.collectionViewItems.bind(to: collectionView.rx.items) { (collectionView, row, element) in
             let indexPath = IndexPath(row: row, section: 0)
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IngredientsHeaderCell", for: indexPath)
-            return cell
+            switch(row) {
+            case 0:
+                return collectionView.dequeueReusableCell(withReuseIdentifier: "IngredientsHeaderCell", for: indexPath) as! IngredientsHeaderCell
+            case 1:
+                return collectionView.dequeueReusableCell(withReuseIdentifier: "IngredientsTitleCell", for: indexPath) 
+            default:
+                return collectionView.dequeueReusableCell(withReuseIdentifier: "IngredientCell", for: indexPath)
+            }
         }
         .disposed(by: viewModel.disposeBag)
         viewModel.bind()
@@ -30,6 +36,13 @@ class IngredientsController: UIViewController {
 extension IngredientsController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let collectionViewSize = collectionView.frame.size.width
-        return CGSize(width: collectionViewSize, height: collectionViewSize - 25)
+        switch(indexPath.row) {
+        case 0:
+            return CGSize(width: collectionViewSize, height: collectionViewSize - 25)
+        case 1:
+            return CGSize(width: collectionViewSize, height: 65)
+        default:
+            return CGSize(width: collectionViewSize, height: 65)
+        }
     }
 }

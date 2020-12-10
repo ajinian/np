@@ -14,6 +14,7 @@
 		0693A1DD258053A7004175A4 /* NotificationBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693A1DC258053A7004175A4 /* NotificationBanner.swift */; };
 		0693A1FD2581309A004175A4 /* IngredientsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693A1FC2581309A004175A4 /* IngredientsController.swift */; };
 		06AA6D74257D89EB00918523 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AA6D73257D89EB00918523 /* Extensions.swift */; };
+		06CC192E2582508400FE1121 /* CheckboxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CC192D2582508400FE1121 /* CheckboxButton.swift */; };
 		06CEDA942581E4BF002DAD5F /* IngredientsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CEDA932581E4BF002DAD5F /* IngredientsHeaderCell.swift */; };
 		06D0CD17257B2DE800EE7754 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D0CD16257B2DE800EE7754 /* AppDelegate.swift */; };
 		06D0CD19257B2DE800EE7754 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D0CD18257B2DE800EE7754 /* SceneDelegate.swift */; };
@@ -64,6 +65,7 @@
 		0693A1DC258053A7004175A4 /* NotificationBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBanner.swift; sourceTree = "<group>"; };
 		0693A1FC2581309A004175A4 /* IngredientsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsController.swift; sourceTree = "<group>"; };
 		06AA6D73257D89EB00918523 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		06CC192D2582508400FE1121 /* CheckboxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxButton.swift; sourceTree = "<group>"; };
 		06CEDA932581E4BF002DAD5F /* IngredientsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsHeaderCell.swift; sourceTree = "<group>"; };
 		06D0CD13257B2DE800EE7754 /* NennosPizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NennosPizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06D0CD16257B2DE800EE7754 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				068E2A0B257FE4EA00FDB9DF /* BadgeButton.swift */,
 				06AA6D73257D89EB00918523 /* Extensions.swift */,
 				0693A1DC258053A7004175A4 /* NotificationBanner.swift */,
+				06CC192D2582508400FE1121 /* CheckboxButton.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				06AA6D74257D89EB00918523 /* Extensions.swift in Sources */,
 				06E28BC3257BDFA300212A50 /* PizzaCollection.swift in Sources */,
 				06D0CDB1257B3ED400EE7754 /* Session.swift in Sources */,
+				06CC192E2582508400FE1121 /* CheckboxButton.swift in Sources */,
 				06D0CD17257B2DE800EE7754 /* AppDelegate.swift in Sources */,
 				0693A1FD2581309A004175A4 /* IngredientsController.swift in Sources */,
 				06D0CD19257B2DE800EE7754 /* SceneDelegate.swift in Sources */,

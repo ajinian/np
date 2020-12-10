@@ -237,6 +237,70 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="413" height="360"/>
                                     </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="IngredientsTitleCell" id="HPP-eL-yGM">
+                                        <rect key="frame" x="0.5" y="360" width="413" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Rig-ER-Z33">
+                                            <rect key="frame" x="0.0" y="0.0" width="413" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTk-1O-ei0">
+                                                    <rect key="frame" x="8" y="0.0" width="397" height="80"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <color key="textColor" red="0.88254982230000001" green="0.30068621039999999" blue="0.27209600810000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GTk-1O-ei0" firstAttribute="leading" secondItem="Rig-ER-Z33" secondAttribute="leading" constant="8" id="2gU-ve-X0h"/>
+                                                <constraint firstItem="GTk-1O-ei0" firstAttribute="top" secondItem="Rig-ER-Z33" secondAttribute="top" id="ja3-ZI-b7f"/>
+                                                <constraint firstAttribute="trailing" secondItem="GTk-1O-ei0" secondAttribute="trailing" constant="8" id="nE3-Mb-ilo"/>
+                                                <constraint firstAttribute="bottom" secondItem="GTk-1O-ei0" secondAttribute="bottom" id="wCO-7g-z8l"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="413" height="80"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="IngredientCell" id="v9D-3J-n5V">
+                                        <rect key="frame" x="0.5" y="440" width="413" height="69"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Mme-Oh-m64">
+                                            <rect key="frame" x="0.0" y="0.0" width="413" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="siI-Ra-91k">
+                                                    <rect key="frame" x="8" y="8" width="364" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csc-ol-nJJ">
+                                                    <rect key="frame" x="8" y="40" width="364" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1z-l6-RfA" customClass="CheckBox" customModule="NennosPizza" customModuleProvider="target">
+                                                    <rect key="frame" x="380" y="22" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="25" id="DJp-XG-xOl"/>
+                                                        <constraint firstAttribute="height" constant="25" id="UAq-NX-AbW"/>
+                                                    </constraints>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="siI-Ra-91k" firstAttribute="leading" secondItem="Mme-Oh-m64" secondAttribute="leading" constant="8" id="4Gb-0s-hvM"/>
+                                                <constraint firstAttribute="trailing" secondItem="B1z-l6-RfA" secondAttribute="trailing" constant="8" id="6td-Cn-CzS"/>
+                                                <constraint firstAttribute="bottom" secondItem="csc-ol-nJJ" secondAttribute="bottom" constant="8" id="GaG-pS-FVn"/>
+                                                <constraint firstItem="csc-ol-nJJ" firstAttribute="leading" secondItem="Mme-Oh-m64" secondAttribute="leading" constant="8" id="ItN-Cq-jFb"/>
+                                                <constraint firstItem="B1z-l6-RfA" firstAttribute="centerY" secondItem="Mme-Oh-m64" secondAttribute="centerY" id="NbC-ZA-rf5"/>
+                                                <constraint firstItem="B1z-l6-RfA" firstAttribute="leading" secondItem="csc-ol-nJJ" secondAttribute="trailing" constant="8" id="ZTC-1b-guH"/>
+                                                <constraint firstItem="siI-Ra-91k" firstAttribute="top" secondItem="Mme-Oh-m64" secondAttribute="top" constant="8" id="vkF-wI-B4f"/>
+                                                <constraint firstItem="B1z-l6-RfA" firstAttribute="leading" secondItem="siI-Ra-91k" secondAttribute="trailing" constant="8" id="wi9-77-kQk"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="413" height="69"/>
+                                    </collectionViewCell>
                                 </cells>
                             </collectionView>
                         </subviews>
