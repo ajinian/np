@@ -174,11 +174,92 @@
                     <connections>
                         <outlet property="collectionView" destination="19l-bX-hww" id="0SU-zq-6De"/>
                         <outlet property="customPizzaButton" destination="xNN-0F-bQZ" id="5yh-mc-cqi"/>
+                        <segue destination="vof-Bs-tAi" kind="show" identifier="IngredientsSegue" id="W4q-g2-mKw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="644.92753623188412" y="-5.3571428571428568"/>
+            <point key="canvasLocation" x="732" y="-5"/>
+        </scene>
+        <!--Ingredients Controller-->
+        <scene sceneID="8L0-fi-H5S">
+            <objects>
+                <viewController storyboardIdentifier="IngredientsController" id="vof-Bs-tAi" customClass="IngredientsController" customModule="NennosPizza" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2ai-v0-DOS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Egk-GK-5yj">
+                                <rect key="frame" x="0.0" y="836" width="414" height="60"/>
+                                <color key="backgroundColor" red="1" green="0.79736617809999999" blue="0.15073233389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="AUn-4f-cyG"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Add to cart" image="ic_cart_button"/>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Db-ND-eJ5">
+                                <rect key="frame" x="0.0" y="88" width="414" height="748"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="eHi-yv-Hs5">
+                                    <size key="itemSize" width="413" height="360"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="IngredientsHeaderCell" id="z9J-HY-UQH" customClass="IngredientsHeaderCell" customModule="NennosPizza" customModuleProvider="target">
+                                        <rect key="frame" x="0.5" y="0.0" width="413" height="360"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="sqM-zq-Si3">
+                                            <rect key="frame" x="0.0" y="0.0" width="413" height="360"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_wood" translatesAutoresizingMaskIntoConstraints="NO" id="kmB-g8-EYa">
+                                                    <rect key="frame" x="0.0" y="0.0" width="413" height="360"/>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a2G-HT-wXD">
+                                                    <rect key="frame" x="56.5" y="30" width="300" height="300"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="300" id="Vvg-07-wjv"/>
+                                                        <constraint firstAttribute="width" constant="300" id="cde-E8-xfL"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="a2G-HT-wXD" firstAttribute="centerY" secondItem="sqM-zq-Si3" secondAttribute="centerY" id="Anb-KM-hvS"/>
+                                                <constraint firstItem="a2G-HT-wXD" firstAttribute="centerX" secondItem="sqM-zq-Si3" secondAttribute="centerX" id="P6E-67-qsj"/>
+                                                <constraint firstAttribute="bottom" secondItem="kmB-g8-EYa" secondAttribute="bottom" id="QBH-Ni-Ntv"/>
+                                                <constraint firstAttribute="trailing" secondItem="kmB-g8-EYa" secondAttribute="trailing" id="gtE-BY-UgY"/>
+                                                <constraint firstItem="kmB-g8-EYa" firstAttribute="top" secondItem="sqM-zq-Si3" secondAttribute="top" id="kHY-VZ-rl6"/>
+                                                <constraint firstItem="kmB-g8-EYa" firstAttribute="leading" secondItem="sqM-zq-Si3" secondAttribute="leading" id="vlh-aa-utn"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="413" height="360"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XoH-jf-LXf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Egk-GK-5yj" firstAttribute="top" secondItem="3Db-ND-eJ5" secondAttribute="bottom" id="4cf-MF-1Qq"/>
+                            <constraint firstItem="3Db-ND-eJ5" firstAttribute="trailing" secondItem="XoH-jf-LXf" secondAttribute="trailing" id="CnN-St-k1G"/>
+                            <constraint firstItem="3Db-ND-eJ5" firstAttribute="leading" secondItem="XoH-jf-LXf" secondAttribute="leading" id="LxH-hy-13J"/>
+                            <constraint firstItem="Egk-GK-5yj" firstAttribute="trailing" secondItem="XoH-jf-LXf" secondAttribute="trailing" id="O59-uM-WKl"/>
+                            <constraint firstItem="Egk-GK-5yj" firstAttribute="leading" secondItem="XoH-jf-LXf" secondAttribute="leading" id="ZRX-50-Igy"/>
+                            <constraint firstItem="3Db-ND-eJ5" firstAttribute="top" secondItem="XoH-jf-LXf" secondAttribute="top" id="jir-Rz-XKt"/>
+                            <constraint firstAttribute="bottom" secondItem="Egk-GK-5yj" secondAttribute="bottom" id="qTC-xc-bOH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="q4u-3m-q4E"/>
+                    <connections>
+                        <outlet property="collectionView" destination="3Db-ND-eJ5" id="K0o-CB-m29"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qqK-DW-x85" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1553.6231884057972" y="-5.3571428571428568"/>
         </scene>
     </scenes>
     <resources>

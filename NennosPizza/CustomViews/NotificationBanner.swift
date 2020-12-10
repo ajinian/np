@@ -54,7 +54,6 @@ class NotificationBanner {
             }
             isDisplayed = true
 
-            //remove subview after time 2 sec
             UIView.animate(withDuration: animateDuration, delay: bannerAppearanceDuration, options: [], animations: {
                 bannerTopConstraint.constant = superView.bounds.height
                 superView.layoutIfNeeded()

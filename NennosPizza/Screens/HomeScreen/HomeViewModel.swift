@@ -83,6 +83,10 @@ class HomeViewModel: ViewModel {
         pizzas.value.pizzas[index]
     }
     
+    var basePrice: Double {
+        pizzas.value.basePrice
+    }
+    
     private func convert(amount: Double) -> String {
         let currencyFormatter = NumberFormatter()
         currencyFormatter.usesGroupingSeparator = true

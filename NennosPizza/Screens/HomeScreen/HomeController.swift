@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class HomeController: UIViewController {
+class HomeController: UIViewController, IngredientsRoute {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -20,12 +20,6 @@ class HomeController: UIViewController {
         super.viewDidLoad()
         setLeftAlignedNavigationItemTitle(text: "Nenno's Pizza")
         collectionView.delegate = self
-        viewModel.pizzas.subscribe { pizzas in
-            print(pizzas)
-        } onError: { (error) in
-            print(error)
-        }.disposed(by: viewModel.disposeBag)
-        
         viewModel.pizzas.map { pizzaCollection -> [PizzaModel] in
             pizzaCollection.pizzas
         }.bind(to: collectionView.rx.items(cellIdentifier: "PizzaCell", cellType: PizzaCell.self)) { (row, element, cell) in
@@ -47,10 +41,14 @@ class HomeController: UIViewController {
         Cart.shared.items.map { (_, _, numItems) in String(numItems) }
         .bind(to: button.badgeLabel.rx.text)
         .disposed(by: viewModel.disposeBag)
-    }
-    
-    @objc func goToCart() {
-        print("test")
+        
+        collectionView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
+            if let s = self {
+                let pizza = s.viewModel.pizza(at: indexPath.row)
+                let basePrice = s.viewModel.basePrice
+                s.showIngredients(viewModel: IngredientsViewModel(pizza: pizza, basePrice: basePrice))
+            }
+        }).disposed(by: viewModel.disposeBag)
     }
 }
 
