@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class HomeController: ViewController, IngredientsRoute {
+class HomeController: ViewController, IngredientsRoute, CartRoute {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var customPizzaButton: UIButton!
@@ -36,6 +36,13 @@ class HomeController: ViewController, IngredientsRoute {
         button.tintColor = UIColor(displayP3Red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
         let cartButton = UIBarButtonItem(customView: button)
         self.navigationItem.rightBarButtonItem = cartButton
+        
+        button.rx.tap.subscribe { [weak self] _ in
+            guard let s = self else { return }
+            s.showCart(viewModel: CartViewModel())
+            
+        }.disposed(by: viewModel.disposeBag)
+
         
         
         Cart.shared.items.map { (_, _, numItems) in String(numItems) }

@@ -186,6 +186,7 @@
                         <outlet property="collectionView" destination="19l-bX-hww" id="0SU-zq-6De"/>
                         <outlet property="customPizzaButton" destination="xNN-0F-bQZ" id="5yh-mc-cqi"/>
                         <segue destination="vof-Bs-tAi" kind="show" identifier="IngredientsSegue" id="W4q-g2-mKw"/>
+                        <segue destination="Qkf-ZA-xFn" kind="show" identifier="CartSetgue" id="drq-JN-HWs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -346,9 +347,87 @@
             </objects>
             <point key="canvasLocation" x="1553.6231884057972" y="-5.3571428571428568"/>
         </scene>
+        <!--Cart Controller-->
+        <scene sceneID="nYk-NT-irD">
+            <objects>
+                <viewController storyboardIdentifier="CartController" id="Qkf-ZA-xFn" customClass="CartController" customModule="NennosPizza" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="63C-Lt-diQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oCu-of-nKq">
+                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="O6Z-Eh-TQa">
+                                    <size key="itemSize" width="414" height="93"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CartCell" id="TdN-a0-iRv">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="93"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="D6c-le-rYI">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="93"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNU-Q9-Xeb">
+                                                    <rect key="frame" x="16" y="16" width="40" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.13355588909999999" green="0.1335814297" blue="0.13355028629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uSz-Mr-70y">
+                                                    <rect key="frame" x="16" y="57" width="39.5" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.46389698979999999" green="0.46390622850000002" blue="0.45960468049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVr-0x-R1H">
+                                                    <rect key="frame" x="374" y="34.5" width="24" height="24"/>
+                                                    <color key="tintColor" red="0.46389698979999999" green="0.46390622850000002" blue="0.45960468049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" image="delete"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="nVr-0x-R1H" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="uSz-Mr-70y" secondAttribute="trailing" constant="8" symbolic="YES" id="9XL-Y6-s5c"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tNU-Q9-Xeb" secondAttribute="trailing" constant="20" symbolic="YES" id="G1D-Og-xTN"/>
+                                                <constraint firstAttribute="bottom" secondItem="uSz-Mr-70y" secondAttribute="bottom" constant="16" id="OsR-2S-liu"/>
+                                                <constraint firstItem="tNU-Q9-Xeb" firstAttribute="leading" secondItem="D6c-le-rYI" secondAttribute="leading" constant="16" id="XPz-o4-X8T"/>
+                                                <constraint firstItem="nVr-0x-R1H" firstAttribute="centerY" secondItem="D6c-le-rYI" secondAttribute="centerY" id="goJ-V8-b4O"/>
+                                                <constraint firstAttribute="trailing" secondItem="nVr-0x-R1H" secondAttribute="trailing" constant="16" id="mzb-MJ-3B1"/>
+                                                <constraint firstItem="uSz-Mr-70y" firstAttribute="leading" secondItem="D6c-le-rYI" secondAttribute="leading" constant="16" id="qBe-AI-6vU"/>
+                                                <constraint firstItem="tNU-Q9-Xeb" firstAttribute="top" secondItem="D6c-le-rYI" secondAttribute="top" constant="16" id="sKf-bY-bAp"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="414" height="93"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IUY-IK-aVh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oCu-of-nKq" firstAttribute="top" secondItem="IUY-IK-aVh" secondAttribute="top" id="4hU-yQ-oVd"/>
+                            <constraint firstAttribute="bottom" secondItem="oCu-of-nKq" secondAttribute="bottom" id="CbP-Ae-rVW"/>
+                            <constraint firstItem="oCu-of-nKq" firstAttribute="trailing" secondItem="IUY-IK-aVh" secondAttribute="trailing" id="tZz-Wx-ZlD"/>
+                            <constraint firstItem="oCu-of-nKq" firstAttribute="leading" secondItem="IUY-IK-aVh" secondAttribute="leading" id="ycw-Z1-tr8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="c1Y-gN-efK"/>
+                    <connections>
+                        <outlet property="collectionView" destination="oCu-of-nKq" id="46D-kX-TcD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="98y-kZ-DtN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2334.7826086956525" y="4.6875"/>
+        </scene>
     </scenes>
     <resources>
         <image name="bg_wood" width="480" height="405.33334350585938"/>
+        <image name="delete" width="24" height="24"/>
         <image name="ic_cart_button" width="24" height="24"/>
         <image name="left-arrow" width="24" height="24"/>
         <image name="pizza_placeholder" width="170" height="170"/>
