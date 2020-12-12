@@ -293,7 +293,7 @@
                                                     <color key="textColor" red="0.46389698979999999" green="0.46390622850000002" blue="0.45960468049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1z-l6-RfA" customClass="CheckBox" customModule="NennosPizza" customModuleProvider="target">
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1z-l6-RfA" customClass="CheckBox" customModule="NennosPizza" customModuleProvider="target">
                                                     <rect key="frame" x="377" y="24.5" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="DJp-XG-xOl"/>

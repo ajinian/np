@@ -13,29 +13,33 @@ import RxNuke
 
 class IngredientsViewModel: ViewModel {
     
-    let pizza: PizzaModel
-    private let basePrice: Double
-    let ingredients = BehaviorRelay<BasicItemCollection>(value: BasicItemCollection())
+    let basePrice: Double
+    var pizza: PizzaModel
+    var ingredients:BasicItemCollection
+    var collectionCells: [CollectionViewCell]
     let collectionViewItems = BehaviorRelay<[CollectionViewCell]>(value: [])
     
     init(pizza: PizzaModel, basePrice: Double) {
         self.pizza = pizza
         self.basePrice = basePrice
+        self.ingredients = BasicItemCollection()
+        self.collectionCells = []
     }
     
     func bind() {
         let ingredientsRequest:Observable<BasicItemCollection> = RequestBuilder(session: Session(), api: BaseApi())
             .build(paths: ["/ingredients.json"]).asObservable()
         ingredientsRequest.map { [weak self] ingredients -> [CollectionViewCell] in
-            var items:[CollectionViewCell] = []
             if let s = self {
-                items.append(CollectionViewCell(pizza: s.pizza))
-                items.append(CollectionViewCell(title: "Ingredients"))
+                s.ingredients = ingredients
+                s.collectionCells.append(CollectionViewCell(pizza: s.pizza))
+                s.collectionCells.append(CollectionViewCell(title: "Ingredients"))
                 ingredients.collection.forEach { item in
-                    items.append(CollectionViewCell(ingredient: item, isIngredientSelected: s.pizza.ingredients.contains(item.id)))
+                    s.collectionCells.append(CollectionViewCell(ingredient: item, isIngredientSelected: s.pizza.ingredients.contains(item.id)))
                 }
+                return s.collectionCells
             }
-            return items
+            return []
         }.bind(to: collectionViewItems)
         .disposed(by: disposeBag)
     }
@@ -67,21 +71,40 @@ class IngredientsViewModel: ViewModel {
         }
     }
     
-    func ingredientSelected(at row: Int) -> Observable<Bool> {
+    func isIngredientSelected(at row: Int) -> Observable<Bool> {
         return Observable.create { [weak self] observer in
             guard let s = self else { return Disposables.create()}
             observer.onNext(s.collectionViewItems.value[row].isIngredientSelected ?? false)
             return Disposables.create()
         }
     }
+    
+    func changeIngredient(at row: Int) {
+        collectionCells.removeAll()
+        let ingredient = collectionViewItems.value[row].ingredient!
+        if pizza.ingredients.contains(ingredient.id) {
+            pizza.ingredients.removeAll { (value) -> Bool in
+                value == ingredient.id
+            }
+        } else {
+            pizza.ingredients.append(ingredient.id)
+        }
+        collectionCells.append(CollectionViewCell(pizza: pizza))
+        collectionCells.append(CollectionViewCell(title: "Ingredients"))
+        ingredients.collection.forEach { item in
+            collectionCells.append(CollectionViewCell(ingredient: item, isIngredientSelected: pizza.ingredients.contains(item.id)))
+        }
+        collectionViewItems.accept(collectionCells)
+    }
 }
 
-struct CollectionViewCell {
+class CollectionViewCell {
     
-    let ingredient: BasicItemModel?
-    let isIngredientSelected: Bool?
     let pizza: PizzaModel?
     let title: String?
+    
+    var ingredient: BasicItemModel?
+    var isIngredientSelected: Bool?
     
     init(ingredient: BasicItemModel? = nil, isIngredientSelected:Bool?=false, pizza: PizzaModel? = nil, title: String? = nil) {
         self.ingredient = ingredient
