@@ -338,6 +338,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="q4u-3m-q4E"/>
                     <connections>
+                        <outlet property="addToCartButton" destination="Egk-GK-5yj" id="jDq-gT-Vju"/>
                         <outlet property="collectionView" destination="3Db-ND-eJ5" id="K0o-CB-m29"/>
                     </connections>
                 </viewController>

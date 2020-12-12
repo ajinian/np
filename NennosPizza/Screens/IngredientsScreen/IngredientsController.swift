@@ -13,7 +13,8 @@ class IngredientsController: ViewController {
     var viewModel: IngredientsViewModel!
     
     @IBOutlet weak var collectionView: UICollectionView!
-
+    @IBOutlet weak var addToCartButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = viewModel.pizza.name
@@ -43,6 +44,11 @@ class IngredientsController: ViewController {
         
         collectionView.rx.itemSelected.subscribe { index in
             self.viewModel.changeIngredient(at: index.row)
+        }.disposed(by: viewModel.disposeBag)
+        
+        addToCartButton.rx.tap.subscribe { _ in
+            self.viewModel.addToCart()
+            NotificationBanner.show("Added to cart")
         }.disposed(by: viewModel.disposeBag)
     }
 }

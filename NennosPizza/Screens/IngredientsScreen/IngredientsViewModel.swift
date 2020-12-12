@@ -96,6 +96,10 @@ class IngredientsViewModel: ViewModel {
         }
         collectionViewItems.accept(collectionCells)
     }
+    
+    func addToCart() {
+        Cart.shared.add(pizza: pizza)
+    }
 }
 
 class CollectionViewCell {
