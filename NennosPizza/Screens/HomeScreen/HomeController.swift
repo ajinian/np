@@ -49,6 +49,11 @@ class HomeController: ViewController, IngredientsRoute {
                 s.showIngredients(viewModel: IngredientsViewModel(pizza: pizza, basePrice: basePrice))
             }
         }).disposed(by: viewModel.disposeBag)
+        
+        customPizzaButton.rx.tap.subscribe { [weak self] _ in
+            guard let s = self else { return }
+            s.showIngredients(viewModel: IngredientsViewModel(pizza: s.viewModel.customPizza, basePrice: s.viewModel.basePrice))
+        }.disposed(by: viewModel.disposeBag)
     }
 }
 
