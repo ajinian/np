@@ -74,7 +74,7 @@ class HomeViewModel: ViewModel {
         return Observable.create { [weak self] subscriber -> Disposable in
             guard let s = self else { return Disposables.create() }
             let total = s.pizzas.value.price(at: index)
-            subscriber.onNext(s.convert(amount: total))
+            subscriber.onNext(total.stringCurrency)
             return Disposables.create()
         }
     }
@@ -85,13 +85,5 @@ class HomeViewModel: ViewModel {
     
     var basePrice: Double {
         pizzas.value.basePrice
-    }
-    
-    private func convert(amount: Double) -> String {
-        let currencyFormatter = NumberFormatter()
-        currencyFormatter.usesGroupingSeparator = true
-        currencyFormatter.numberStyle = .currency
-        currencyFormatter.locale = Locale.current
-        return currencyFormatter.string(from: NSNumber(value: amount))!
     }
 }

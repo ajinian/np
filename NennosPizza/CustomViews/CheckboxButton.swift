@@ -16,9 +16,11 @@ class CheckBox: UIButton {
             if isChecked == true {
                 self.setImage(checkedImage, for: .normal)
                 self.backgroundColor = UIColor(displayP3Red: 1, green: 0.31, blue: 0.27, alpha: 1.0)
+                layer.borderWidth = 0
             } else {
                 self.setImage(nil, for: .normal)
                 self.backgroundColor = .white
+                layer.borderWidth = 2
             }
         }
     }

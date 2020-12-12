@@ -8,13 +8,15 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import Nuke
+import RxNuke
 
 class IngredientsViewModel: ViewModel {
     
-    private let pizza: PizzaModel
+    let pizza: PizzaModel
     private let basePrice: Double
     let ingredients = BehaviorRelay<BasicItemCollection>(value: BasicItemCollection())
-    let collectionViewItems = PublishSubject<[CollectionViewCell]>()
+    let collectionViewItems = BehaviorRelay<[CollectionViewCell]>(value: [])
     
     init(pizza: PizzaModel, basePrice: Double) {
         self.pizza = pizza
@@ -38,6 +40,33 @@ class IngredientsViewModel: ViewModel {
             return items
         }.bind(to: collectionViewItems)
         .disposed(by: disposeBag)
+    }
+    
+    var productImage: Observable<UIImage>? {
+        if let url = pizza.imageUrl {
+            return ImagePipeline.shared.rx.loadImage(with: url).asObservable().catchError { _ in
+                .empty()
+            }.map { response -> UIImage in
+                response.image
+            }
+        }
+        return nil
+    }
+    
+    func ingredientName(at row: Int) -> Observable<String?> {
+        return Observable.create { [weak self] observer in
+            guard let s = self else { return Disposables.create() }
+            observer.onNext(s.collectionViewItems.value[row].ingredient?.name)
+            return Disposables.create()
+        }
+    }
+    
+    func ingredientPrie(at row: Int) -> Observable<String?> {
+        return Observable.create { [weak self] observer in
+            guard let s = self else { return Disposables.create() }
+            observer.onNext(s.collectionViewItems.value[row].ingredient?.price.stringCurrency)
+            return Disposables.create()
+        }
     }
 }
 

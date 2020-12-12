@@ -15,6 +15,8 @@
 		0693A1FD2581309A004175A4 /* IngredientsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693A1FC2581309A004175A4 /* IngredientsController.swift */; };
 		06AA6D74257D89EB00918523 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AA6D73257D89EB00918523 /* Extensions.swift */; };
 		06CC192E2582508400FE1121 /* CheckboxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CC192D2582508400FE1121 /* CheckboxButton.swift */; };
+		06CC193325832C6800FE1121 /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CC193225832C6800FE1121 /* IngredientCell.swift */; };
+		06CC1938258456BF00FE1121 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CC1937258456BF00FE1121 /* ViewController.swift */; };
 		06CEDA942581E4BF002DAD5F /* IngredientsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CEDA932581E4BF002DAD5F /* IngredientsHeaderCell.swift */; };
 		06D0CD17257B2DE800EE7754 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D0CD16257B2DE800EE7754 /* AppDelegate.swift */; };
 		06D0CD19257B2DE800EE7754 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D0CD18257B2DE800EE7754 /* SceneDelegate.swift */; };
@@ -66,6 +68,8 @@
 		0693A1FC2581309A004175A4 /* IngredientsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsController.swift; sourceTree = "<group>"; };
 		06AA6D73257D89EB00918523 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		06CC192D2582508400FE1121 /* CheckboxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxButton.swift; sourceTree = "<group>"; };
+		06CC193225832C6800FE1121 /* IngredientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
+		06CC1937258456BF00FE1121 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		06CEDA932581E4BF002DAD5F /* IngredientsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsHeaderCell.swift; sourceTree = "<group>"; };
 		06D0CD13257B2DE800EE7754 /* NennosPizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NennosPizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06D0CD16257B2DE800EE7754 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 			children = (
 				0693A1B225800E20004175A4 /* Cart.swift */,
 				060844722581548500795356 /* Router.swift */,
+				06AA6D73257D89EB00918523 /* Extensions.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 				0693A1FC2581309A004175A4 /* IngredientsController.swift */,
 				0608447A2581555F00795356 /* IngredientsViewModel.swift */,
 				06CEDA932581E4BF002DAD5F /* IngredientsHeaderCell.swift */,
+				06CC193225832C6800FE1121 /* IngredientCell.swift */,
 			);
 			path = IngredientsScreen;
 			sourceTree = "<group>";
@@ -152,7 +158,6 @@
 			isa = PBXGroup;
 			children = (
 				068E2A0B257FE4EA00FDB9DF /* BadgeButton.swift */,
-				06AA6D73257D89EB00918523 /* Extensions.swift */,
 				0693A1DC258053A7004175A4 /* NotificationBanner.swift */,
 				06CC192D2582508400FE1121 /* CheckboxButton.swift */,
 			);
@@ -230,6 +235,7 @@
 				06E28BDA257C09DC00212A50 /* HomeScreen */,
 				06D0CD1C257B2DE800EE7754 /* Main.storyboard */,
 				06E28BED257C0DE500212A50 /* ViewModel.swift */,
+				06CC1937258456BF00FE1121 /* ViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -530,8 +536,10 @@
 				06E28BB0257BDDFB00212A50 /* BasicItemModel.swift in Sources */,
 				06D0CDB6257B3F2000EE7754 /* RequestBuilder.swift in Sources */,
 				06E28BBE257BDF1100212A50 /* PizzaModel.swift in Sources */,
+				06CC193325832C6800FE1121 /* IngredientCell.swift in Sources */,
 				06E28BEE257C0DE500212A50 /* ViewModel.swift in Sources */,
 				06E28BF8257C433900212A50 /* PizzaCell.swift in Sources */,
+				06CC1938258456BF00FE1121 /* ViewController.swift in Sources */,
 				0608447B2581555F00795356 /* IngredientsViewModel.swift in Sources */,
 				06E28BB6257BDE2D00212A50 /* BasicItemCollection.swift in Sources */,
 				060844732581548500795356 /* Router.swift in Sources */,

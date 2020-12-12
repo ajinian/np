@@ -9,16 +9,16 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class HomeController: UIViewController, IngredientsRoute {
+class HomeController: ViewController, IngredientsRoute {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var customPizzaButton: UIButton!
     
     let viewModel = HomeViewModel()
-    @IBOutlet weak var customPizzaButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setLeftAlignedNavigationItemTitle(text: "Nenno's Pizza")
+        title = "Nenno's Pizza"
         collectionView.delegate = self
         viewModel.pizzas.map { pizzaCollection -> [PizzaModel] in
             pizzaCollection.pizzas
