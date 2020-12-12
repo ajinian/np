@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class CheckBox: UIButton {
     
@@ -36,6 +38,14 @@ class CheckBox: UIButton {
     @objc func buttonClicked(sender: UIButton) {
         if sender == self {
             isChecked = !isChecked
+        }
+    }
+}
+
+extension Reactive where Base: CheckBox {
+    var isChecked: Binder<Bool> {
+        return Binder(self.base) { button, isChecked in
+            button.isChecked = isChecked
         }
     }
 }

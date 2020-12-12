@@ -29,12 +29,10 @@ class IngredientsViewModel: ViewModel {
         ingredientsRequest.map { [weak self] ingredients -> [CollectionViewCell] in
             var items:[CollectionViewCell] = []
             if let s = self {
-                let headerCell = CollectionViewCell(pizza: s.pizza)
-                let titleCell = CollectionViewCell(title: "Ingredients")
-                items.append(headerCell)
-                items.append(titleCell)
+                items.append(CollectionViewCell(pizza: s.pizza))
+                items.append(CollectionViewCell(title: "Ingredients"))
                 ingredients.collection.forEach { item in
-                    items.append(CollectionViewCell(ingredient: item))
+                    items.append(CollectionViewCell(ingredient: item, isIngredientSelected: s.pizza.ingredients.contains(item.id)))
                 }
             }
             return items
@@ -64,7 +62,15 @@ class IngredientsViewModel: ViewModel {
     func ingredientPrie(at row: Int) -> Observable<String?> {
         return Observable.create { [weak self] observer in
             guard let s = self else { return Disposables.create() }
-            observer.onNext(s.collectionViewItems.value[row].ingredient?.price.stringCurrency)
+            observer.onNext(s.collectionViewItems.value[row].ingredient?.price.toStringCurrency)
+            return Disposables.create()
+        }
+    }
+    
+    func ingredientSelected(at row: Int) -> Observable<Bool> {
+        return Observable.create { [weak self] observer in
+            guard let s = self else { return Disposables.create()}
+            observer.onNext(s.collectionViewItems.value[row].isIngredientSelected ?? false)
             return Disposables.create()
         }
     }
@@ -73,11 +79,13 @@ class IngredientsViewModel: ViewModel {
 struct CollectionViewCell {
     
     let ingredient: BasicItemModel?
+    let isIngredientSelected: Bool?
     let pizza: PizzaModel?
     let title: String?
     
-    init(ingredient: BasicItemModel? = nil, pizza: PizzaModel? = nil, title: String? = nil) {
+    init(ingredient: BasicItemModel? = nil, isIngredientSelected:Bool?=false, pizza: PizzaModel? = nil, title: String? = nil) {
         self.ingredient = ingredient
+        self.isIngredientSelected = isIngredientSelected
         self.pizza = pizza
         self.title = title
     }

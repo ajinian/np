@@ -9,7 +9,7 @@ import UIKit
 
 extension Double {
     
-    var stringCurrency: String {
+    var toStringCurrency: String {
         let currencyFormatter = NumberFormatter()
         currencyFormatter.usesGroupingSeparator = true
         currencyFormatter.numberStyle = .currency

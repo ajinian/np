@@ -64,7 +64,7 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_wood" translatesAutoresizingMaskIntoConstraints="NO" id="4z7-bc-7TI">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="369"/>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mql-y8-kg5">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizza_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Mql-y8-kg5">
                                                     <rect key="frame" x="57" y="34.5" width="300" height="300"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="300" id="WJq-fm-jG5"/>
@@ -229,7 +229,7 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_wood" translatesAutoresizingMaskIntoConstraints="NO" id="kmB-g8-EYa">
                                                     <rect key="frame" x="0.0" y="0.0" width="413" height="360"/>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a2G-HT-wXD">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizza_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="a2G-HT-wXD">
                                                     <rect key="frame" x="56.5" y="30" width="300" height="300"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="300" id="Vvg-07-wjv"/>
@@ -350,6 +350,7 @@
         <image name="bg_wood" width="480" height="405.33334350585938"/>
         <image name="ic_cart_button" width="24" height="24"/>
         <image name="left-arrow" width="24" height="24"/>
+        <image name="pizza_placeholder" width="170" height="170"/>
         <image name="pizza_plus" width="170" height="166.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

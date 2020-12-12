@@ -34,6 +34,7 @@ class IngredientsController: ViewController {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IngredientCell", for: indexPath) as! IngredientCell
                 self.viewModel.ingredientName(at: row).bind(to: cell.name.rx.text).disposed(by: self.viewModel.disposeBag)
                 self.viewModel.ingredientPrie(at: row).bind(to: cell.price.rx.text).disposed(by: self.viewModel.disposeBag)
+                self.viewModel.ingredientSelected(at: row).bind(to: cell.checkbox.rx.isChecked).disposed(by: self.viewModel.disposeBag)
                 return cell
             }
         }

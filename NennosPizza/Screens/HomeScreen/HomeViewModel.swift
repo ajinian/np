@@ -74,7 +74,7 @@ class HomeViewModel: ViewModel {
         return Observable.create { [weak self] subscriber -> Disposable in
             guard let s = self else { return Disposables.create() }
             let total = s.pizzas.value.price(at: index)
-            subscriber.onNext(total.stringCurrency)
+            subscriber.onNext(total.toStringCurrency)
             return Disposables.create()
         }
     }
