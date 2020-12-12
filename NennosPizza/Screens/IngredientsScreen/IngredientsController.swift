@@ -50,6 +50,9 @@ class IngredientsController: ViewController {
             self.viewModel.addToCart()
             NotificationBanner.show("Added to cart")
         }.disposed(by: viewModel.disposeBag)
+        
+        viewModel.addToCartButtonTitle.bind(to: addToCartButton.rx.title(for: .normal))
+            .disposed(by: viewModel.disposeBag)
     }
 }
 

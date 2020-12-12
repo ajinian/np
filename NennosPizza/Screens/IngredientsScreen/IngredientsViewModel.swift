@@ -17,13 +17,16 @@ class IngredientsViewModel: ViewModel {
     var pizza: PizzaModel
     var ingredients:BasicItemCollection
     var collectionCells: [CollectionViewCell]
-    let collectionViewItems = BehaviorRelay<[CollectionViewCell]>(value: [])
+    let collectionViewItems: BehaviorRelay<[CollectionViewCell]>
+    let addToCartButtonTitle: BehaviorRelay<String>
     
     init(pizza: PizzaModel, basePrice: Double) {
         self.pizza = pizza
         self.basePrice = basePrice
         self.ingredients = BasicItemCollection()
         self.collectionCells = []
+        self.collectionViewItems = BehaviorRelay<[CollectionViewCell]>(value: [])
+        self.addToCartButtonTitle = BehaviorRelay<String>(value: "Add to cart (\((pizza.price + basePrice).toStringCurrency))")
     }
     
     func bind() {
@@ -95,10 +98,20 @@ class IngredientsViewModel: ViewModel {
             collectionCells.append(CollectionViewCell(ingredient: item, isIngredientSelected: pizza.ingredients.contains(item.id)))
         }
         collectionViewItems.accept(collectionCells)
+        addToCartButtonTitle.accept("Add to cart (\(total.toStringCurrency))")
     }
     
     func addToCart() {
         Cart.shared.add(pizza: pizza)
+    }
+    
+    var total: Double {
+        collectionCells.reduce(basePrice) { (r, c) -> Double in
+            if c.isIngredientSelected ?? false, let ingr = c.ingredient {
+                return r + ingr.price
+            }
+            return r
+        }
     }
 }
 
