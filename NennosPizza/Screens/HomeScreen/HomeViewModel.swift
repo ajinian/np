@@ -25,17 +25,17 @@ class HomeViewModel: ViewModel {
             .build(paths: ["/ingredients.json"])
             .asObservable()
         
-        Observable.zip(pizzasRequest, ingredientsRequest).map { (p, i) -> PizzaCollection in
+        let drinksRequest: Observable<BasicItemCollection> = RequestBuilder(session: Session(), api: BaseApi())
+            .build(paths: ["/drinks.json"])
+            .asObservable()
+        
+        Observable.zip(pizzasRequest, ingredientsRequest, drinksRequest).map { (p, i, d) -> PizzaCollection in
             var tempPizzas = PizzaCollection()
+            tempPizzas.ingredients = i
+            tempPizzas.drinks = d
             tempPizzas.basePrice = p.basePrice
-            for (pi, pizza) in p.pizzas.enumerated() {
+            for pizza in p.pizzas{
                 tempPizzas.pizzas.append(pizza)
-                tempPizzas.pizzas[pi].mappedIngredients = [BasicItemModel]()
-                for id in pizza.ingredients {
-                    if let item = i.item(with: id) {
-                        tempPizzas.pizzas[pi].mappedIngredients?.append(item)
-                    }
-                }
             }
             return tempPizzas
         }
@@ -54,7 +54,7 @@ class HomeViewModel: ViewModel {
     func ingredients(at index: Int) -> Observable<String?> {
         return Observable.create { [weak self] subscriber -> Disposable in
             guard let s = self else { return Disposables.create() }
-            subscriber.onNext(s.pizzas.value.pizzas[index].ingredientNames)
+            subscriber.onNext(s.pizzas.value.ingredientNames(at: index))
             return Disposables.create()
         }
     }
@@ -81,10 +81,6 @@ class HomeViewModel: ViewModel {
     
     func pizza(at index: Int) -> PizzaModel {
         pizzas.value.pizzas[index]
-    }
-    
-    var customPizza: PizzaModel {
-        return PizzaModel(ingredients: [], name: "Custom Pizza", imageUrl: nil, mappedIngredients: nil)
     }
     
     var basePrice: Double {

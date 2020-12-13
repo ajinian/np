@@ -40,7 +40,6 @@ class IngredientsController: ViewController {
             }
         }
         .disposed(by: viewModel.disposeBag)
-        viewModel.bind()
         
         collectionView.rx.itemSelected.subscribe { index in
             self.viewModel.changeIngredient(at: index.row)

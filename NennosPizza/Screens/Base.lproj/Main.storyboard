@@ -46,7 +46,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="19l-bX-hww">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="EKJ-aM-Uts">
                                     <size key="itemSize" width="414" height="369"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -365,7 +365,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CartCell" id="TdN-a0-iRv">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CartCell" id="TdN-a0-iRv" customClass="CartCell" customModule="NennosPizza" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="93"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="D6c-le-rYI">
@@ -402,6 +402,10 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="414" height="93"/>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="tNU-Q9-Xeb" id="OKI-8u-RUN"/>
+                                            <outlet property="priceLabel" destination="uSz-Mr-70y" id="Dy1-cY-ORt"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

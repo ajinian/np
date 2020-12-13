@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		060844732581548500795356 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060844722581548500795356 /* Router.swift */; };
 		0608447B2581555F00795356 /* IngredientsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0608447A2581555F00795356 /* IngredientsViewModel.swift */; };
+		062C3F902585E077005F2D6E /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062C3F8F2585E077005F2D6E /* CartCell.swift */; };
 		068E2A0C257FE4EA00FDB9DF /* BadgeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068E2A0B257FE4EA00FDB9DF /* BadgeButton.swift */; };
 		0693A1B325800E20004175A4 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693A1B225800E20004175A4 /* Cart.swift */; };
 		0693A1DD258053A7004175A4 /* NotificationBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693A1DC258053A7004175A4 /* NotificationBanner.swift */; };
@@ -64,6 +65,7 @@
 		021DED123E1A01E959F3BCD0 /* Pods-NennosPizzaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NennosPizzaTests.debug.xcconfig"; path = "Target Support Files/Pods-NennosPizzaTests/Pods-NennosPizzaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		060844722581548500795356 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		0608447A2581555F00795356 /* IngredientsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsViewModel.swift; sourceTree = "<group>"; };
+		062C3F8F2585E077005F2D6E /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 		068E2A0B257FE4EA00FDB9DF /* BadgeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeButton.swift; sourceTree = "<group>"; };
 		0693A1B225800E20004175A4 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		0693A1DC258053A7004175A4 /* NotificationBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBanner.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			children = (
 				06A074DA2585859B00EE0230 /* CartController.swift */,
 				06A074DF258585B300EE0230 /* CartViewModel.swift */,
+				062C3F8F2585E077005F2D6E /* CartCell.swift */,
 			);
 			path = CartScreen;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				06D0CDA7257B3DF500EE7754 /* BaseApi.swift in Sources */,
 				06E28BF3257C0E2A00212A50 /* HomeViewModel.swift in Sources */,
 				0693A1B325800E20004175A4 /* Cart.swift in Sources */,
+				062C3F902585E077005F2D6E /* CartCell.swift in Sources */,
 				06A074E0258585B300EE0230 /* CartViewModel.swift in Sources */,
 				068E2A0C257FE4EA00FDB9DF /* BadgeButton.swift in Sources */,
 				06AA6D74257D89EB00918523 /* Extensions.swift in Sources */,
