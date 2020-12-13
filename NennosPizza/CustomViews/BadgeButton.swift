@@ -14,13 +14,13 @@ class BadgeButton: UIButton {
     private var badgeNumber: Int = 0
     
     required init?(coder: NSCoder) {
-        badgeLabel = UILabel(frame: CGRect(x: -25, y: 1, width: 20, height: 20))
+        badgeLabel = UILabel(frame: CGRect(x: -20, y: 1, width: 20, height: 20))
         super.init(coder: coder)
         showBadge()
     }
     
     override init(frame: CGRect) {
-        badgeLabel = UILabel(frame: CGRect(x: -25, y: 1, width: frame.size.width, height: frame.size.height))
+        badgeLabel = UILabel(frame: CGRect(x: -20, y: 1, width: frame.size.width, height: frame.size.height))
         super.init(frame: frame)
         showBadge()
     }

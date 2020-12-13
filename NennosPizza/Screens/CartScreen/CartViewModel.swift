@@ -32,4 +32,10 @@ class CartViewModel: ViewModel {
             return Disposables.create()
         }
     }
+    
+    var total: Observable<String?> {
+        return Cart.shared.total.map { total -> String in
+            "Checkout (\(total.toStringCurrency))"
+        }
+    }
 }

@@ -29,7 +29,7 @@ class NotificationBanner {
 
             let label = UILabel(frame: CGRect.zero)
             label.textColor = UIColor.white
-            label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+            label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
             label.text = text
             label.translatesAutoresizingMaskIntoConstraints = false
             label.textAlignment = .center

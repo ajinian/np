@@ -17,11 +17,13 @@ class Cart {
     
     var items: BehaviorRelay<[CartItem]>
     var count: BehaviorRelay<Int>
+    var total: BehaviorRelay<Double>
     
     init() {
         cartItems = []
         items = BehaviorRelay(value: cartItems)
         count = BehaviorRelay(value: 0)
+        total = BehaviorRelay(value: 0)
         emit()
     }
     
@@ -38,6 +40,9 @@ class Cart {
     private func emit() {
         items.accept(cartItems)
         count.accept(cartItems.count)
+        total.accept(cartItems.reduce(0) { r, item -> Double in
+            r + item.price
+        })
     }
 }
 

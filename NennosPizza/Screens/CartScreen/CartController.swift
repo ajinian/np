@@ -10,6 +10,7 @@ import UIKit
 class CartController: ViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var checkoutButton: UIButton!
     var viewModel: CartViewModel!
 
     override func viewDidLoad() {
@@ -22,6 +23,9 @@ class CartController: ViewController {
             cell.load(viewModel: self.viewModel, index: row)
             return cell
         }.disposed(by: viewModel.disposeBag)
+        
+        viewModel.total.bind(to: checkoutButton.rx.title(for: .normal))
+            .disposed(by: viewModel.disposeBag)
     }
 }
 
