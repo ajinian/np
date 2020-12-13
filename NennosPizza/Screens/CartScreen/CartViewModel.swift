@@ -11,4 +11,25 @@ import RxCocoa
 
 class CartViewModel: ViewModel {
     
+    override init() {
+        super.init()
+    }
+    
+    func remove(at index: Int) {
+        Cart.shared.remove(pizza: index)
+    }
+    
+    func name(at index: Int) -> Observable<String?> {
+        Observable.create{ observer in
+            observer.onNext(Cart.shared.cartItems[index].name)
+            return Disposables.create()
+        }
+    }
+    
+    func price(at index: Int) -> Observable<String?> {
+        Observable.create {observer in
+            observer.onNext(Cart.shared.cartItems[index].price.toStringCurrency)
+            return Disposables.create()
+        }
+    }
 }

@@ -358,7 +358,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oCu-of-nKq">
                                 <rect key="frame" x="0.0" y="140" width="414" height="756"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="O6Z-Eh-TQa">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="O6Z-Eh-TQa">
                                     <size key="itemSize" width="414" height="93"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -388,6 +388,9 @@
                                                     <rect key="frame" x="374" y="34.5" width="24" height="24"/>
                                                     <color key="tintColor" red="0.46389698979999999" green="0.46390622850000002" blue="0.45960468049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="delete"/>
+                                                    <connections>
+                                                        <action selector="deleteTapped:" destination="TdN-a0-iRv" eventType="touchUpInside" id="bo5-as-cEJ"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -403,6 +406,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="414" height="93"/>
                                         <connections>
+                                            <outlet property="deleteButton" destination="nVr-0x-R1H" id="mYE-Vf-udZ"/>
                                             <outlet property="nameLabel" destination="tNU-Q9-Xeb" id="OKI-8u-RUN"/>
                                             <outlet property="priceLabel" destination="uSz-Mr-70y" id="Dy1-cY-ORt"/>
                                         </connections>

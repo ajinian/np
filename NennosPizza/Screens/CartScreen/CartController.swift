@@ -16,19 +16,18 @@ class CartController: ViewController {
         super.viewDidLoad()
         title = "Cart"
         collectionView.delegate = self
+        Cart.shared.items.bind(to: collectionView.rx.items) { (collectionView, row, element) in
+            let indexPath = IndexPath(row: row, section: 0)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CartCell", for: indexPath) as! CartCell
+            cell.load(viewModel: self.viewModel, index: row)
+            return cell
+        }.disposed(by: viewModel.disposeBag)
     }
 }
 
-extension IngredientsController: UICollectionViewDelegateFlowLayout {
+extension CartController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let collectionViewSize = collectionView.frame.size.width
-        switch(indexPath.row) {
-        case 0:
-            return CGSize(width: collectionViewSize, height: collectionViewSize - 25)
-        case 1:
-            return CGSize(width: collectionViewSize, height: 55)
-        default:
-            return CGSize(width: collectionViewSize, height: 65)
-        }
+        return CGSize(width: collectionViewSize, height: 75)
     }
 }

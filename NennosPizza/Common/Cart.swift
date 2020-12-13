@@ -13,23 +13,35 @@ class Cart {
     
     static let shared = Cart()
     
-    private var pizzas: PizzaCollection
-    private var drinks: BasicItemCollection
+    var cartItems: [CartItem]
     
-    var items: PublishSubject<(PizzaCollection, BasicItemCollection, Int)>
+    var items: BehaviorRelay<[CartItem]>
+    var count: BehaviorRelay<Int>
     
     init() {
-        pizzas = PizzaCollection()
-        drinks = BasicItemCollection()
-        items = PublishSubject()
+        cartItems = []
+        items = BehaviorRelay(value: cartItems)
+        count = BehaviorRelay(value: 0)
+        emit()
     }
     
-    func add(pizza: PizzaModel) {
-        pizzas.add(pizza: pizza)
+    func add(cartItem: CartItem) {
+        cartItems.append(cartItem)
+        emit()
+    }
+    
+    func remove(pizza index: Int) {
+        cartItems.remove(at: index)
         emit()
     }
     
     private func emit() {
-        items.onNext((pizzas, drinks, pizzas.pizzas.count + drinks.collection.count))
+        items.accept(cartItems)
+        count.accept(cartItems.count)
     }
+}
+
+struct CartItem {
+    let name: String
+    let price: Double
 }

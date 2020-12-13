@@ -15,19 +15,19 @@ class IngredientsViewModel: ViewModel {
     
     let pizzas: PizzaCollection
     var pizza: PizzaModel
-    var collectionCells: [CollectionViewCell]
-    let collectionViewItems = BehaviorRelay<[CollectionViewCell]>(value: [])
+    var collectionCells: [IngredientCollectionViewCell]
+    let collectionViewItems = BehaviorRelay<[IngredientCollectionViewCell]>(value: [])
     let addToCartButtonTitle = BehaviorRelay<String>(value: "")
     
     init(pizzas: PizzaCollection, index: Int?) {
         self.pizzas = pizzas
         self.pizza = pizzas.pizza(at: index)
         self.collectionCells = []
-        collectionCells.append(CollectionViewCell(pizza: pizza))
-        collectionCells.append(CollectionViewCell(title: "Ingredients"))
+        collectionCells.append(IngredientCollectionViewCell(pizza: pizza))
+        collectionCells.append(IngredientCollectionViewCell(title: "Ingredients"))
         if let ingredients = pizzas.ingredients?.collection {
             for ingredient in ingredients {
-                collectionCells.append(CollectionViewCell(ingredient: ingredient, isIngredientSelected: self.pizza.ingredients.contains(ingredient.id)))
+                collectionCells.append(IngredientCollectionViewCell(ingredient: ingredient, isIngredientSelected: self.pizza.ingredients.contains(ingredient.id)))
             }
             collectionViewItems.accept(collectionCells)
         }
@@ -82,10 +82,10 @@ class IngredientsViewModel: ViewModel {
             } else {
                 pizza.ingredients.append(ingredient.id)
             }
-            collectionCells.append(CollectionViewCell(pizza: pizza))
-            collectionCells.append(CollectionViewCell(title: "Ingredients"))
+            collectionCells.append(IngredientCollectionViewCell(pizza: pizza))
+            collectionCells.append(IngredientCollectionViewCell(title: "Ingredients"))
             pizzas.ingredients?.collection.forEach { item in
-                collectionCells.append(CollectionViewCell(ingredient: item, isIngredientSelected: pizza.ingredients.contains(item.id)))
+                collectionCells.append(IngredientCollectionViewCell(ingredient: item, isIngredientSelected: pizza.ingredients.contains(item.id)))
             }
             collectionViewItems.accept(collectionCells)
             addToCartButtonTitle.accept("Add to cart (\(total.toStringCurrency))")
@@ -93,7 +93,7 @@ class IngredientsViewModel: ViewModel {
     }
     
     func addToCart() {
-        Cart.shared.add(pizza: pizza)
+        Cart.shared.add(cartItem: CartItem(name: pizza.name, price: total))
     }
     
     var total: Double {
@@ -106,13 +106,12 @@ class IngredientsViewModel: ViewModel {
     }
 }
 
-class CollectionViewCell {
+struct IngredientCollectionViewCell {
     
     let pizza: PizzaModel?
     let title: String?
-    
-    var ingredient: BasicItemModel?
-    var isIngredientSelected: Bool?
+    let ingredient: BasicItemModel?
+    let isIngredientSelected: Bool?
     
     init(ingredient: BasicItemModel? = nil, isIngredientSelected:Bool?=false, pizza: PizzaModel? = nil, title: String? = nil) {
         self.ingredient = ingredient

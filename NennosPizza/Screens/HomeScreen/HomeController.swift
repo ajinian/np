@@ -43,9 +43,11 @@ class HomeController: ViewController, IngredientsRoute, CartRoute {
             
         }.disposed(by: viewModel.disposeBag)
         
-        Cart.shared.items.map { (_, _, numItems) in String(numItems) }
-        .bind(to: button.badgeLabel.rx.text)
-            .disposed(by: viewModel.disposeBag)
+        
+        Cart.shared.count.map { count -> String in
+            String(count)
+        }.bind(to: button.badgeLabel.rx.text)
+        .disposed(by: viewModel.disposeBag)
         
         collectionView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
             if let s = self {

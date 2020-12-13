@@ -55,7 +55,7 @@ class IngredientsController: ViewController {
     }
 }
 
-extension CartController: UICollectionViewDelegateFlowLayout {
+extension IngredientsController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let collectionViewSize = collectionView.frame.size.width
         switch(indexPath.row) {

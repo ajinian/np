@@ -56,7 +56,9 @@ struct PizzaCollection: Codable {
         return PizzaModel(ingredients: [], name: "Custom Pizza", imageUrl: nil)
     }
     
-    mutating func add(pizza: PizzaModel) {
-        pizzas.append(pizza)
+    func indexOf(pizza named: String) -> Int? {
+        return pizzas.firstIndex { pizza -> Bool in
+            pizza.name == named
+        }
     }
 }
