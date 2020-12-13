@@ -83,10 +83,6 @@ class HomeViewModel: ViewModel {
         pizzas.value.pizzas[index]
     }
     
-    var customPizza: PizzaModel {
-        return PizzaModel(ingredients: [], name: "Custom Pizza", imageUrl: nil)
-    }
-    
     var basePrice: Double {
         pizzas.value.basePrice
     }

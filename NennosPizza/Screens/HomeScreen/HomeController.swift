@@ -42,8 +42,6 @@ class HomeController: ViewController, IngredientsRoute, CartRoute {
             s.showCart(viewModel: CartViewModel())
             
         }.disposed(by: viewModel.disposeBag)
-
-        
         
         Cart.shared.items.map { (_, _, numItems) in String(numItems) }
         .bind(to: button.badgeLabel.rx.text)
@@ -51,15 +49,13 @@ class HomeController: ViewController, IngredientsRoute, CartRoute {
         
         collectionView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
             if let s = self {
-                let pizza = s.viewModel.pizza(at: indexPath.row)
-                let basePrice = s.viewModel.basePrice
-                s.showIngredients(viewModel: IngredientsViewModel(pizza: pizza, basePrice: basePrice))
+                s.showIngredients(viewModel: IngredientsViewModel(pizzas: s.viewModel.pizzas.value, index: indexPath.row))
             }
         }).disposed(by: viewModel.disposeBag)
         
         customPizzaButton.rx.tap.subscribe { [weak self] _ in
             guard let s = self else { return }
-            s.showIngredients(viewModel: IngredientsViewModel(pizza: s.viewModel.customPizza, basePrice: s.viewModel.basePrice))
+            s.showIngredients(viewModel: IngredientsViewModel(pizzas: s.viewModel.pizzas.value, index: nil))
         }.disposed(by: viewModel.disposeBag)
     }
 }

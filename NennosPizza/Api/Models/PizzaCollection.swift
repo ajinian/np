@@ -49,6 +49,13 @@ struct PizzaCollection: Codable {
         return namesArray.joined(separator: ", ")
     }
     
+    func pizza(at index: Int?) -> PizzaModel {
+        if let index = index {
+            return pizzas[index]
+        }
+        return PizzaModel(ingredients: [], name: "Custom Pizza", imageUrl: nil)
+    }
+    
     mutating func add(pizza: PizzaModel) {
         pizzas.append(pizza)
     }
