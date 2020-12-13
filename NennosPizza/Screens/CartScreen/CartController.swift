@@ -16,6 +16,11 @@ class CartController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Cart"
+        let customButton = UIButton()
+        customButton.setImage(UIImage(named: "beverage"), for: .normal)
+        customButton.tintColor = .gray
+        let rightButton = UIBarButtonItem(customView: customButton)
+        self.navigationItem.setRightBarButtonItems([rightButton], animated: true)
         collectionView.delegate = self
         Cart.shared.items.bind(to: collectionView.rx.items) { (collectionView, row, element) in
             let indexPath = IndexPath(row: row, section: 0)
@@ -26,6 +31,10 @@ class CartController: ViewController {
         
         viewModel.total.bind(to: checkoutButton.rx.title(for: .normal))
             .disposed(by: viewModel.disposeBag)
+    }
+    
+    @objc func showDrinksScreen() {
+        
     }
 }
 
