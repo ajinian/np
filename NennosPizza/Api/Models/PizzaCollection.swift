@@ -20,7 +20,33 @@ struct PizzaCollection: Codable {
     }
     
     func price(at index: Int) -> Double {
-        pizzas[index].price + basePrice
+        guard ingredients != nil else { return basePrice }
+        let pizza = pizzas[index]
+        var priceArray = [Double]()
+        pizza.ingredients.forEach { ingredientId in
+            if let ingredient = ingredients?.collection.first(where: { m -> Bool in
+                m.id == ingredientId
+            }) {
+                priceArray.append(ingredient.price)
+            }
+        }
+        return priceArray.reduce(basePrice) { (r, p) -> Double in
+            r + p
+        }
+    }
+    
+    func ingredientNames(at index: Int) -> String {
+        guard ingredients != nil else { return "" }
+        let pizza = pizzas[index]
+        var namesArray = [String]()
+        pizza.ingredients.forEach { ingredientId in
+            if let ingredient = ingredients?.collection.first(where: { model -> Bool in
+                model.id == ingredientId
+            }) {
+                namesArray.append(ingredient.name)
+            }
+        }
+        return namesArray.joined(separator: ", ")
     }
     
     mutating func add(pizza: PizzaModel) {

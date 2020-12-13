@@ -34,14 +34,8 @@ class HomeViewModel: ViewModel {
             tempPizzas.ingredients = i
             tempPizzas.drinks = d
             tempPizzas.basePrice = p.basePrice
-            for (pi, pizza) in p.pizzas.enumerated() {
+            for pizza in p.pizzas{
                 tempPizzas.pizzas.append(pizza)
-                tempPizzas.pizzas[pi].mappedIngredients = [BasicItemModel]()
-                for id in pizza.ingredients {
-                    if let item = i.item(with: id) {
-                        tempPizzas.pizzas[pi].mappedIngredients?.append(item)
-                    }
-                }
             }
             return tempPizzas
         }
@@ -60,7 +54,7 @@ class HomeViewModel: ViewModel {
     func ingredients(at index: Int) -> Observable<String?> {
         return Observable.create { [weak self] subscriber -> Disposable in
             guard let s = self else { return Disposables.create() }
-            subscriber.onNext(s.pizzas.value.pizzas[index].ingredientNames)
+            subscriber.onNext(s.pizzas.value.ingredientNames(at: index))
             return Disposables.create()
         }
     }
@@ -90,7 +84,7 @@ class HomeViewModel: ViewModel {
     }
     
     var customPizza: PizzaModel {
-        return PizzaModel(ingredients: [], name: "Custom Pizza", imageUrl: nil, mappedIngredients: nil)
+        return PizzaModel(ingredients: [], name: "Custom Pizza", imageUrl: nil)
     }
     
     var basePrice: Double {

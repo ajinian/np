@@ -26,7 +26,7 @@ class IngredientsViewModel: ViewModel {
         self.ingredients = BasicItemCollection()
         self.collectionCells = []
         self.collectionViewItems = BehaviorRelay<[CollectionViewCell]>(value: [])
-        self.addToCartButtonTitle = BehaviorRelay<String>(value: "Add to cart (\((pizza.price + basePrice).toStringCurrency))")
+        self.addToCartButtonTitle = BehaviorRelay<String>(value: "Add to cart (\((basePrice).toStringCurrency))")
     }
     
     func bind() {
