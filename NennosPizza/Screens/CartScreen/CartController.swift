@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CartController: ViewController {
+class CartController: ViewController, DrinksRoute {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var checkoutButton: UIButton!
@@ -16,11 +16,6 @@ class CartController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Cart"
-        let customButton = UIButton()
-        customButton.setImage(UIImage(named: "beverage"), for: .normal)
-        customButton.tintColor = .gray
-        let rightButton = UIBarButtonItem(customView: customButton)
-        self.navigationItem.setRightBarButtonItems([rightButton], animated: true)
         collectionView.delegate = self
         Cart.shared.items.bind(to: collectionView.rx.items) { (collectionView, row, element) in
             let indexPath = IndexPath(row: row, section: 0)
@@ -31,10 +26,16 @@ class CartController: ViewController {
         
         viewModel.total.bind(to: checkoutButton.rx.title(for: .normal))
             .disposed(by: viewModel.disposeBag)
-    }
-    
-    @objc func showDrinksScreen() {
         
+        let customButton = UIButton()
+        customButton.setImage(UIImage(named: "beverage"), for: .normal)
+        customButton.tintColor = .gray
+        let rightButton = UIBarButtonItem(customView: customButton)
+        self.navigationItem.setRightBarButtonItems([rightButton], animated: true)
+        customButton.rx.tap.subscribe { [weak self] _ in
+            guard let s = self else { return }
+            s.showDrinks(viewModel: DrinksViewModel())
+        }.disposed(by: viewModel.disposeBag)
     }
 }
 

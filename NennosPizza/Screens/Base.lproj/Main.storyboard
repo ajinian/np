@@ -447,11 +447,100 @@
                     <connections>
                         <outlet property="checkoutButton" destination="7D5-UM-vci" id="Jbv-If-MbQ"/>
                         <outlet property="collectionView" destination="oCu-of-nKq" id="46D-kX-TcD"/>
+                        <segue destination="emn-ek-zq7" kind="show" identifier="DrinksController" id="g5D-UU-xRC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="98y-kZ-DtN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2331.8840579710145" y="-5.3571428571428568"/>
+        </scene>
+        <!--Drinks Controller-->
+        <scene sceneID="rgp-dI-pOQ">
+            <objects>
+                <viewController storyboardIdentifier="DrinksController" id="emn-ek-zq7" customClass="DrinksController" customModule="NennosPizza" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qf9-tN-BEh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JVk-kN-n6A">
+                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jlO-bN-D00">
+                                    <size key="itemSize" width="414" height="92"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DrinksCell" id="k7e-Nh-cpO" customClass="DrinksCell" customModule="NennosPizza" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="93"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dxB-ni-xiV">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="93"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SyU-zn-Oqg">
+                                                    <rect key="frame" x="16" y="16" width="40" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.13355588909999999" green="0.1335814297" blue="0.13355028629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1n-2A-0YH">
+                                                    <rect key="frame" x="16" y="57" width="39.5" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.46389698979999999" green="0.46390622850000002" blue="0.45960468049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOf-6R-hvO">
+                                                    <rect key="frame" x="363" y="29" width="35" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="16m-JW-ldw"/>
+                                                        <constraint firstAttribute="width" constant="35" id="Jdc-RR-kD1"/>
+                                                    </constraints>
+                                                    <color key="tintColor" red="0.46389698979999999" green="0.46390622850000002" blue="0.45960468049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" image="plus"/>
+                                                    <connections>
+                                                        <action selector="addButtonTapped:" destination="k7e-Nh-cpO" eventType="touchUpInside" id="e4W-6w-jyP"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="l1n-2A-0YH" secondAttribute="bottom" constant="16" id="1sM-Fh-wqB"/>
+                                                <constraint firstItem="KOf-6R-hvO" firstAttribute="centerY" secondItem="dxB-ni-xiV" secondAttribute="centerY" id="E8j-TH-MMW"/>
+                                                <constraint firstItem="KOf-6R-hvO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="l1n-2A-0YH" secondAttribute="trailing" constant="8" symbolic="YES" id="Lrl-2f-o5k"/>
+                                                <constraint firstItem="SyU-zn-Oqg" firstAttribute="top" secondItem="dxB-ni-xiV" secondAttribute="top" constant="16" id="NxO-gb-20I"/>
+                                                <constraint firstAttribute="trailing" secondItem="KOf-6R-hvO" secondAttribute="trailing" constant="16" id="TwB-ru-ph7"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="SyU-zn-Oqg" secondAttribute="trailing" constant="20" symbolic="YES" id="l1z-Lx-2Wh"/>
+                                                <constraint firstItem="SyU-zn-Oqg" firstAttribute="leading" secondItem="dxB-ni-xiV" secondAttribute="leading" constant="16" id="ldk-Cm-GiH"/>
+                                                <constraint firstItem="l1n-2A-0YH" firstAttribute="leading" secondItem="dxB-ni-xiV" secondAttribute="leading" constant="16" id="sb4-lq-aDV"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="414" height="93"/>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="SyU-zn-Oqg" id="zhk-98-7xs"/>
+                                            <outlet property="priceLabel" destination="l1n-2A-0YH" id="dGt-oX-uwT"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="g9F-lB-iBo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JVk-kN-n6A" firstAttribute="trailing" secondItem="g9F-lB-iBo" secondAttribute="trailing" id="6Aj-hw-BJz"/>
+                            <constraint firstItem="JVk-kN-n6A" firstAttribute="top" secondItem="g9F-lB-iBo" secondAttribute="top" id="M6B-SF-ALd"/>
+                            <constraint firstAttribute="bottom" secondItem="JVk-kN-n6A" secondAttribute="bottom" id="YAi-xT-o8A"/>
+                            <constraint firstItem="JVk-kN-n6A" firstAttribute="leading" secondItem="g9F-lB-iBo" secondAttribute="leading" id="dHI-uV-3O6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Uwx-II-K7C"/>
+                    <connections>
+                        <outlet property="collectionView" destination="JVk-kN-n6A" id="LSE-VM-lY3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wBK-N8-BqF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3128.985507246377" y="-5.3571428571428568"/>
         </scene>
     </scenes>
     <resources>
@@ -461,6 +550,7 @@
         <image name="left-arrow" width="24" height="24"/>
         <image name="pizza_placeholder" width="170" height="170"/>
         <image name="pizza_plus" width="170" height="166.5"/>
+        <image name="plus" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

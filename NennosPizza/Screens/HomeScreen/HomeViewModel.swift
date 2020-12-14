@@ -25,14 +25,9 @@ class HomeViewModel: ViewModel {
             .build(paths: ["/ingredients.json"])
             .asObservable()
         
-        let drinksRequest: Observable<BasicItemCollection> = RequestBuilder(session: Session(), api: BaseApi())
-            .build(paths: ["/drinks.json"])
-            .asObservable()
-        
-        Observable.zip(pizzasRequest, ingredientsRequest, drinksRequest).map { (p, i, d) -> PizzaCollection in
+        Observable.zip(pizzasRequest, ingredientsRequest).map { (p, i) -> PizzaCollection in
             var tempPizzas = PizzaCollection()
             tempPizzas.ingredients = i
-            tempPizzas.drinks = d
             tempPizzas.basePrice = p.basePrice
             for pizza in p.pizzas{
                 tempPizzas.pizzas.append(pizza)

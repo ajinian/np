@@ -12,7 +12,6 @@ struct PizzaCollection: Codable {
     var pizzas: [PizzaModel]
     
     var ingredients: BasicItemCollection?
-    var drinks: BasicItemCollection?
     
     init() {
         basePrice = 0
