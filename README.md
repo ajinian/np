@@ -1,3 +1,3 @@
-1 Run `pod install` form terminal
-Open `NennosPizza.xcworkspace` file
-Run the app. 
+1. Run `pod install` form terminal
+2. Open `NennosPizza.xcworkspace` file
+3. Run the app. 
