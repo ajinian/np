@@ -42,7 +42,7 @@ class CartController: ViewController, DrinksRoute {
         self.navigationItem.setRightBarButtonItems([rightButton], animated: true)
         customButton.rx.tap.subscribe { [weak self] _ in
             guard let s = self else { return }
-            s.showDrinks(viewModel: DrinksViewModel())
+            s.showDrinks(di: DrinksDi())
         }.disposed(by: viewModel.disposeBag)
     }
 }

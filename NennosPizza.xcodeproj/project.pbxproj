@@ -19,6 +19,7 @@
 		06AA6D74257D89EB00918523 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AA6D73257D89EB00918523 /* Extensions.swift */; };
 		06B300D92589358100CB7F03 /* IngredientsDi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B300D82589358100CB7F03 /* IngredientsDi.swift */; };
 		06B300DE2589525300CB7F03 /* CartDi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B300DD2589525300CB7F03 /* CartDi.swift */; };
+		06B300E3258954A400CB7F03 /* DrinksDi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B300E2258954A400CB7F03 /* DrinksDi.swift */; };
 		06B541FF2586DC6E00802845 /* DrinksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B541FE2586DC6E00802845 /* DrinksCell.swift */; };
 		06B542072586DC8100802845 /* DrinksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B542062586DC8100802845 /* DrinksController.swift */; };
 		06B5420C2586DC9000802845 /* DrinksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5420B2586DC9000802845 /* DrinksViewModel.swift */; };
@@ -82,6 +83,7 @@
 		06AA6D73257D89EB00918523 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		06B300D82589358100CB7F03 /* IngredientsDi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsDi.swift; sourceTree = "<group>"; };
 		06B300DD2589525300CB7F03 /* CartDi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDi.swift; sourceTree = "<group>"; };
+		06B300E2258954A400CB7F03 /* DrinksDi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksDi.swift; sourceTree = "<group>"; };
 		06B541FE2586DC6E00802845 /* DrinksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksCell.swift; sourceTree = "<group>"; };
 		06B542062586DC8100802845 /* DrinksController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksController.swift; sourceTree = "<group>"; };
 		06B5420B2586DC9000802845 /* DrinksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksViewModel.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				06B5421C25880F1900802845 /* HomeDi.swift */,
 				06B300D82589358100CB7F03 /* IngredientsDi.swift */,
 				06B300DD2589525300CB7F03 /* CartDi.swift */,
+				06B300E2258954A400CB7F03 /* DrinksDi.swift */,
 			);
 			path = Di;
 			sourceTree = "<group>";
@@ -602,6 +605,7 @@
 				0693A1DD258053A7004175A4 /* NotificationBanner.swift in Sources */,
 				06CEDA942581E4BF002DAD5F /* IngredientsHeaderCell.swift in Sources */,
 				06D0CD1B257B2DE800EE7754 /* HomeController.swift in Sources */,
+				06B300E3258954A400CB7F03 /* DrinksDi.swift in Sources */,
 				06D0CDA7257B3DF500EE7754 /* BaseApi.swift in Sources */,
 				06E28BF3257C0E2A00212A50 /* HomeViewModel.swift in Sources */,
 				0693A1B325800E20004175A4 /* Cart.swift in Sources */,

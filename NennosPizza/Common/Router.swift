@@ -20,7 +20,7 @@ protocol CartRoute {
 }
 
 protocol DrinksRoute {
-    func showDrinks(viewModel: DrinksViewModel)
+    func showDrinks(di: DrinksFieldingViewModeling)
 }
 
 extension HomeRoute where Self: SceneDelegate {
@@ -53,9 +53,9 @@ extension CartRoute where Self: UIViewController {
 }
 
 extension DrinksRoute where Self: UIViewController {
-    func showDrinks(viewModel: DrinksViewModel) {
+    func showDrinks(di: DrinksFieldingViewModeling) {
         if let c = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "DrinksController") as? DrinksController {
-            c.viewModel = viewModel
+            c.viewModel = di.viewModel
             self.navigationController?.pushViewController(c, animated: true)
         }
     }

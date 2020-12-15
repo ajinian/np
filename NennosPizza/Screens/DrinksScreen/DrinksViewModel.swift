@@ -9,9 +9,9 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class DrinksViewModel: ViewModel {
+class DrinksViewModel: ViewModel, DrinksFielding {
     
-    let drinks: BehaviorRelay<BasicItemCollection> = BehaviorRelay(value: BasicItemCollection())
+    var drinks: BehaviorRelay<BasicItemCollection> = BehaviorRelay(value: BasicItemCollection())
     
     override init() {
         super.init()
