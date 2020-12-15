@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol HomeRoute {
+    func showHome(di: HomeFieldingViewModeling, window: UIWindow?)
+}
+
 protocol IngredientsRoute {
     func showIngredients(viewModel: IngredientsViewModel)
 }
@@ -17,6 +21,17 @@ protocol CartRoute {
 
 protocol DrinksRoute {
     func showDrinks(viewModel: DrinksViewModel)
+}
+
+extension HomeRoute where Self: SceneDelegate {
+    func showHome(di: HomeFieldingViewModeling, window: UIWindow?) {
+        if let navigationController = window?.rootViewController as? UINavigationController {
+            if let controller = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "HomeController") as? HomeController {
+                controller.viewModel = HomeDi().viewModel
+                navigationController.viewControllers = [controller]
+            }
+        }
+    }
 }
 
 extension IngredientsRoute where Self: UIViewController {

@@ -9,15 +9,24 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+protocol HomeFielding {
+    var pizzas: BehaviorRelay<PizzaCollection> { get }
+    func name(at index: Int) -> Observable<String>
+    func ingredients(at index: Int) -> Observable<String?>
+    func productImage(at index: Int) -> Observable<UIImage>?
+    func price(at index: Int) -> Observable<String>
+}
+
 class HomeController: ViewController, IngredientsRoute, CartRoute {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var customPizzaButton: UIButton!
     
-    let viewModel = HomeViewModel()
+    var viewModel: HomeFieldingViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         title = "Nenno's Pizza"
         collectionView.delegate = self
         viewModel.pizzas.map { pizzaCollection -> [PizzaModel] in
