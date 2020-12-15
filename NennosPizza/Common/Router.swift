@@ -12,7 +12,7 @@ protocol HomeRoute {
 }
 
 protocol IngredientsRoute {
-    func showIngredients(viewModel: IngredientsViewModel)
+    func showIngredients(di: IngrediensFieldingViewModeling)
 }
 
 protocol CartRoute {
@@ -35,9 +35,9 @@ extension HomeRoute where Self: SceneDelegate {
 }
 
 extension IngredientsRoute where Self: UIViewController {
-    func showIngredients(viewModel: IngredientsViewModel) {
+    func showIngredients(di: IngrediensFieldingViewModeling) {
         if let c = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "IngredientsController") as? IngredientsController {
-            c.viewModel = viewModel
+            c.viewModel = di.viewModel
             self.navigationController?.pushViewController(c, animated: true)
         }
     }
