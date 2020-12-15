@@ -14,12 +14,12 @@ class CartCell: UICollectionViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var deleteButton: UIButton!
     
-    var viewModel: CartViewModel!
+    var viewModel: CartFieldingViewModel!
     var index: Int!
     
     let disposeBag = DisposeBag()
     
-    func load(viewModel: CartViewModel, index: Int) {
+    func load(viewModel: CartFieldingViewModel, index: Int) {
         self.viewModel = viewModel
         self.index = index
         viewModel.name(at: index).bind(to: nameLabel.rx.text).disposed(by: viewModel.disposeBag)

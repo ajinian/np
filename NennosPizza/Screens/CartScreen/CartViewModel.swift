@@ -9,11 +9,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class CartViewModel: ViewModel {
-    
-    override init() {
-        super.init()
-    }
+class CartViewModel: ViewModel, CartFielding {
     
     func remove(at index: Int) {
         Cart.shared.remove(pizza: index)

@@ -16,7 +16,7 @@ protocol IngredientsRoute {
 }
 
 protocol CartRoute {
-    func showCart(viewModel: CartViewModel)
+    func showCart(di: CartFieldingViewModeling)
 }
 
 protocol DrinksRoute {
@@ -44,9 +44,9 @@ extension IngredientsRoute where Self: UIViewController {
 }
 
 extension CartRoute where Self: UIViewController {
-    func showCart(viewModel: CartViewModel) {
+    func showCart(di: CartFieldingViewModeling) {
         if let c = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "CartController") as? CartController {
-            c.viewModel = viewModel
+            c.viewModel = di.viewModel
             self.navigationController?.pushViewController(c, animated: true)
         }
     }

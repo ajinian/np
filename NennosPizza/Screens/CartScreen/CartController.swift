@@ -6,12 +6,20 @@
 //
 
 import UIKit
+import RxSwift
+
+protocol CartFielding {
+    var total: Observable<String?> { get }
+    func name(at index: Int) -> Observable<String?>
+    func price(at index: Int) -> Observable<String?>
+    func remove(at index: Int)
+}
 
 class CartController: ViewController, DrinksRoute {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var checkoutButton: UIButton!
-    var viewModel: CartViewModel!
+    var viewModel: CartFieldingViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()

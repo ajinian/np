@@ -47,7 +47,7 @@ class HomeController: ViewController, IngredientsRoute, CartRoute {
         
         button.rx.tap.subscribe { [weak self] _ in
             guard let s = self else { return }
-            s.showCart(viewModel: CartViewModel())
+            s.showCart(di: CartDi())
         }.disposed(by: viewModel.disposeBag)
         
         

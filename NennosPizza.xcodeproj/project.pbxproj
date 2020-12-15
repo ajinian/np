@@ -18,6 +18,7 @@
 		06A074E0258585B300EE0230 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A074DF258585B300EE0230 /* CartViewModel.swift */; };
 		06AA6D74257D89EB00918523 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AA6D73257D89EB00918523 /* Extensions.swift */; };
 		06B300D92589358100CB7F03 /* IngredientsDi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B300D82589358100CB7F03 /* IngredientsDi.swift */; };
+		06B300DE2589525300CB7F03 /* CartDi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B300DD2589525300CB7F03 /* CartDi.swift */; };
 		06B541FF2586DC6E00802845 /* DrinksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B541FE2586DC6E00802845 /* DrinksCell.swift */; };
 		06B542072586DC8100802845 /* DrinksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B542062586DC8100802845 /* DrinksController.swift */; };
 		06B5420C2586DC9000802845 /* DrinksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5420B2586DC9000802845 /* DrinksViewModel.swift */; };
@@ -80,6 +81,7 @@
 		06A074DF258585B300EE0230 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		06AA6D73257D89EB00918523 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		06B300D82589358100CB7F03 /* IngredientsDi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsDi.swift; sourceTree = "<group>"; };
+		06B300DD2589525300CB7F03 /* CartDi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDi.swift; sourceTree = "<group>"; };
 		06B541FE2586DC6E00802845 /* DrinksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksCell.swift; sourceTree = "<group>"; };
 		06B542062586DC8100802845 /* DrinksController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksController.swift; sourceTree = "<group>"; };
 		06B5420B2586DC9000802845 /* DrinksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksViewModel.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				06B542132587D1B700802845 /* Di.swift */,
 				06B5421C25880F1900802845 /* HomeDi.swift */,
 				06B300D82589358100CB7F03 /* IngredientsDi.swift */,
+				06B300DD2589525300CB7F03 /* CartDi.swift */,
 			);
 			path = Di;
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 				06B541FF2586DC6E00802845 /* DrinksCell.swift in Sources */,
 				068E2A0C257FE4EA00FDB9DF /* BadgeButton.swift in Sources */,
 				06AA6D74257D89EB00918523 /* Extensions.swift in Sources */,
+				06B300DE2589525300CB7F03 /* CartDi.swift in Sources */,
 				06E28BC3257BDFA300212A50 /* PizzaCollection.swift in Sources */,
 				06D0CDB1257B3ED400EE7754 /* Session.swift in Sources */,
 				06CC192E2582508400FE1121 /* CheckboxButton.swift in Sources */,
