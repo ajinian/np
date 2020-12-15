@@ -9,13 +9,13 @@ import UIKit
 
 class DrinksCell: UICollectionViewCell {
     
-    var viewModel: DrinksViewModel!
+    var viewModel: DrinksFieldingViewModel!
     var index: Int!
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
-    func load(viewModel: DrinksViewModel, index: Int) {
+    func load(viewModel: DrinksFieldingViewModel, index: Int) {
         self.viewModel = viewModel
         self.index = index
         viewModel.name(at: index).bind(to: nameLabel.rx.text).disposed(by: viewModel.disposeBag)

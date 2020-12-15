@@ -9,15 +9,15 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-protocol DisposeBagProvider {
+protocol DisposeBagging {
     var disposeBag: DisposeBag { get }
 }
 
-protocol ErrorObservableProvider {
+protocol ErrorObserving {
     var error: PublishRelay<Error> { get }
 }
 
-class ViewModel: DisposeBagProvider, ErrorObservableProvider {
+class ViewModel: DisposeBagging, ErrorObserving {
     let disposeBag = DisposeBag()
     let error = PublishRelay<Error>()
 }

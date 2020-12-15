@@ -11,7 +11,7 @@ import RxCocoa
 import Nuke
 import RxNuke
 
-class IngredientsViewModel: ViewModel {
+class IngredientsViewModel: ViewModel, IngredientsFielding {
     
     let pizzas: PizzaCollection
     var pizza: PizzaModel
@@ -96,7 +96,7 @@ class IngredientsViewModel: ViewModel {
         Cart.shared.add(cartItem: CartItem(name: pizza.name, price: total))
     }
     
-    var total: Double {
+    private var total: Double {
         collectionCells.reduce(pizzas.basePrice) { (r, c) -> Double in
             if c.isIngredientSelected ?? false, let ingr = c.ingredient {
                 return r + ingr.price

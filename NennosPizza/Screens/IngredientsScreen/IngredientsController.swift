@@ -7,10 +7,23 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
+
+protocol IngredientsFielding {
+    var pizza: PizzaModel { get }
+    var collectionViewItems: BehaviorRelay<[IngredientCollectionViewCell]> { get }
+    var productImage: Observable<UIImage>? { get }
+    var addToCartButtonTitle: BehaviorRelay<String> { get }
+    func ingredientName(at row: Int) -> Observable<String?>
+    func ingredientPrie(at row: Int) -> Observable<String?>
+    func isIngredientSelected(at row: Int) -> Observable<Bool>
+    func changeIngredient(at row: Int)
+    func addToCart()
+}
 
 class IngredientsController: ViewController {
     
-    var viewModel: IngredientsViewModel!
+    var viewModel: IngredientsFieldingViewModel!
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var addToCartButton: UIButton!

@@ -11,7 +11,7 @@ import RxCocoa
 import Nuke
 import RxNuke
 
-class HomeViewModel: ViewModel {
+class HomeViewModel: ViewModel, HomeFielding {
     
     let pizzas: BehaviorRelay<PizzaCollection> = BehaviorRelay(value: PizzaCollection())
     
@@ -72,13 +72,5 @@ class HomeViewModel: ViewModel {
             subscriber.onNext(total.toStringCurrency)
             return Disposables.create()
         }
-    }
-    
-    func pizza(at index: Int) -> PizzaModel {
-        pizzas.value.pizzas[index]
-    }
-    
-    var basePrice: Double {
-        pizzas.value.basePrice
     }
 }

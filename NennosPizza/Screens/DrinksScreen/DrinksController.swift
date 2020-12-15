@@ -7,10 +7,18 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
+
+protocol DrinksFielding {
+    var drinks: BehaviorRelay<BasicItemCollection> { get }
+    func name(at index: Int) -> Observable<String?>
+    func price(at index: Int) -> Observable<String?>
+    func add(at index: Int)
+}
 
 class DrinksController: UIViewController {
     
-    var viewModel: DrinksViewModel!
+    var viewModel: DrinksFieldingViewModel!
     
     @IBOutlet weak var collectionView: UICollectionView!
     
