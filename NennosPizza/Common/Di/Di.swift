@@ -11,9 +11,13 @@ import RxSwift
 
 typealias FactoryClosure = (DiContainer) -> AnyObject
 
+protocol Containerizable {
+    
+}
+
 protocol DiContainer {
-    func resolve<Service>(type: Service.Type) -> Service?
-    func register<Service>(type: Service.Type, factory: @escaping FactoryClosure)
+    func resolve<T>(type: T.Type) -> T?
+    func register<T>(type: T.Type, factory: @escaping FactoryClosure)
 }
 
 class Di: DiContainer {
@@ -24,11 +28,11 @@ class Di: DiContainer {
         services = Dictionary()
     }
     
-    func resolve<Service>(type: Service.Type) -> Service? {
-        return services["\(type)"]?(self) as? Service
+    func resolve<T>(type: T.Type) -> T? {
+        return services["\(type)"]?(self) as? T
     }
     
-    func register<Service>(type: Service.Type, factory: @escaping FactoryClosure) {
+    func register<T>(type: T.Type, factory: @escaping FactoryClosure) {
         services["\(type)"] = factory
     }
 }

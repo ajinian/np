@@ -11,7 +11,7 @@ struct PizzaCollection: Codable {
     var basePrice: Double
     var pizzas: [PizzaModel]
     
-    var ingredients: BasicItemCollection?
+    var ingredients: IngredientCollection?
     
     init() {
         basePrice = 0
@@ -23,7 +23,7 @@ struct PizzaCollection: Codable {
         let pizza = pizzas[index]
         var priceArray = [Double]()
         pizza.ingredients.forEach { ingredientId in
-            if let ingredient = ingredients?.collection.first(where: { m -> Bool in
+            if let ingredient = ingredients?.ingredients.first(where: { m -> Bool in
                 m.id == ingredientId
             }) {
                 priceArray.append(ingredient.price)
@@ -39,7 +39,7 @@ struct PizzaCollection: Codable {
         let pizza = pizzas[index]
         var namesArray = [String]()
         pizza.ingredients.forEach { ingredientId in
-            if let ingredient = ingredients?.collection.first(where: { model -> Bool in
+            if let ingredient = ingredients?.ingredients.first(where: { model -> Bool in
                 model.id == ingredientId
             }) {
                 namesArray.append(ingredient.name)

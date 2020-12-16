@@ -12,7 +12,8 @@ protocol ApiRequesting {
     var session: SessionProtocol { get }
     var api: ApiProtocol { get }
     var pizzasRequest: Observable<PizzaCollection> { get }
-    var ingredientRequest: Observable<BasicItemCollection> { get }
+    var ingredientRequest: Observable<IngredientCollection> { get }
+    var drinkRequest: Observable<DrinkCollection> { get }
 }
 
 class ApiRequestDi: Di {
@@ -27,8 +28,11 @@ class ApiRequestDi: Di {
         register(type: Observable<PizzaCollection>.self) { di -> Observable<PizzaCollection> in
             Request.fetch(session: di.resolve(type: Session.self)!, api: di.resolve(type: BaseApi.self)!, paths: ["pizzas.json"])
         }
-        register(type: Observable<BasicItemCollection>.self) { di -> Observable<BasicItemCollection> in
+        register(type: Observable<IngredientCollection>.self) { di -> Observable<IngredientCollection> in
             Request.fetch(session: di.resolve(type: Session.self)!, api: di.resolve(type: BaseApi.self)!, paths: ["ingredients.json"])
+        }
+        register(type: Observable<DrinkCollection>.self) { di -> Observable<DrinkCollection> in
+            Request.fetch(session: di.resolve(type: Session.self)!, api: di.resolve(type: BaseApi.self)!, paths: ["drinks.json"])
         }
     }
 }
@@ -43,7 +47,10 @@ extension ApiRequestDi: ApiRequesting {
     var pizzasRequest: Observable<PizzaCollection> {
         resolve(type: Observable<PizzaCollection>.self)!
     }
-    var ingredientRequest: Observable<BasicItemCollection> {
-        resolve(type: Observable<BasicItemCollection>.self)!
+    var ingredientRequest: Observable<IngredientCollection> {
+        resolve(type: Observable<IngredientCollection>.self)!
+    }
+    var drinkRequest: Observable<DrinkCollection> {
+        resolve(type: Observable<DrinkCollection>.self)!
     }
 }
