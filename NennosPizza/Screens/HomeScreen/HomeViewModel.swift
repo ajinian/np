@@ -17,13 +17,9 @@ class HomeViewModel: ViewModel, HomeFielding {
     
     override init() {
         super.init()
-        let pizzasRequest: Observable<PizzaCollection> = RequestBuilder(session: Session(), api: BaseApi())
-            .build(paths: ["/pizzas.json"])
-            .asObservable()
+        let pizzasRequest = Request<PizzaCollection>.fetch(paths: ["/pizzas.json"])
         
-        let ingredientsRequest: Observable<BasicItemCollection> = RequestBuilder(session: Session(), api: BaseApi())
-            .build(paths: ["/ingredients.json"])
-            .asObservable()
+        let ingredientsRequest = Request<BasicItemCollection>.fetch(paths: ["/ingredients.json"])
         
         Observable.zip(pizzasRequest, ingredientsRequest).map { (p, i) -> PizzaCollection in
             var tempPizzas = PizzaCollection()

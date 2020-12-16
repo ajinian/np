@@ -42,23 +42,6 @@ class RequestBuilder {
         }
     }
     
-    func build(url: URL? = nil) -> Single<Data> {
-        setUrl(url: url)
-        return Single<Data>.create { single in
-            let task = self.session.apiSession.dataTask(with: self.request) { (data, response, error) in
-                print(self.request.url?.absoluteString ?? "")
-                if let error = error {
-                    single(.error(error))
-                    return
-                }
-                guard let data = data else { return }
-                single(.success(data))
-            }
-            task.resume()
-            return Disposables.create { task.cancel() }
-        }
-    }
-    
     private func setPaths(paths: [String]?) {
         if let paths = paths {
             paths.forEach { path in
