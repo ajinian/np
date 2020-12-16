@@ -50,7 +50,6 @@ class HomeController: ViewController, IngredientsRoute, CartRoute {
             s.showCart(di: CartDi())
         }.disposed(by: viewModel.disposeBag)
         
-        
         Cart.shared.count.map { String($0) }.bind(to: button.badgeLabel.rx.text).disposed(by: viewModel.disposeBag)
         
         collectionView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
@@ -58,6 +57,11 @@ class HomeController: ViewController, IngredientsRoute, CartRoute {
                 s.showIngredients(di: IngredientsDi(pizzas: s.viewModel.pizzas.value, index: indexPath.row))
             }
         }).disposed(by: viewModel.disposeBag)
+        
+        customPizzaButton.rx.tap.subscribe { [weak self] _ in
+            guard let s = self else { return }
+            s.showIngredients(di: IngredientsDi(pizzas: s.viewModel.pizzas.value, index: nil))
+        }.disposed(by: viewModel.disposeBag)
     }
 }
 

@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 
 protocol DrinksFielding {
-    var drinks: BehaviorRelay<BasicItemCollection> { get }
+    var drinks: BehaviorRelay<DrinkCollection> { get }
     func name(at index: Int) -> Observable<String?>
     func price(at index: Int) -> Observable<String?>
     func add(at index: Int)
@@ -26,8 +26,8 @@ class DrinksController: UIViewController {
         super.viewDidLoad()
         title = "Drinks"
         collectionView.delegate = self
-        viewModel.drinks.map { model -> [BasicItemModel] in
-            model.collection
+        viewModel.drinks.map { model -> [DrinkModel] in
+            model.drinks
         }.bind(to: collectionView.rx.items) { (collectionView, row, element) in
             let indexPath = IndexPath(row: row, section: 0)
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DrinksCell", for: indexPath) as! DrinksCell

@@ -17,7 +17,7 @@ class DrinksDi: Di {
     override init() {
         super.init()
         register(type: DrinksViewModel.self) { _ in
-            DrinksViewModel()
+            DrinksViewModel(di: ApiRequestDi())
         }
     }
 }

@@ -11,20 +11,17 @@ import RxCocoa
 
 class DrinksViewModel: ViewModel, DrinksFielding {
     
-    var drinks: BehaviorRelay<BasicItemCollection> = BehaviorRelay(value: BasicItemCollection())
+    var drinks: BehaviorRelay<DrinkCollection> = BehaviorRelay(value: DrinkCollection())
     
-    override init() {
+    init(di: ApiRequesting) {
         super.init()
-        let drinksRequest: Observable<BasicItemCollection> = RequestBuilder(session: Session(), api: BaseApi())
-            .build(paths: ["/drinks.json"])
-            .asObservable()
-        drinksRequest.bind(to: drinks).disposed(by: disposeBag)
+        di.drinkRequest.bind(to: drinks).disposed(by: disposeBag)
     }
     
     func name(at index: Int) -> Observable<String?> {
         return Observable.create { [weak self] observer in
             guard let s = self else { return Disposables.create() }
-            observer.onNext(s.drinks.value.collection[index].name)
+            observer.onNext(s.drinks.value.drinks[index].name)
             return Disposables.create()
         }
     }
@@ -32,13 +29,13 @@ class DrinksViewModel: ViewModel, DrinksFielding {
     func price(at index: Int) -> Observable<String?> {
         return Observable.create { [weak self] observer in
             guard let s = self else { return Disposables.create() }
-            observer.onNext(s.drinks.value.collection[index].price.toStringCurrency)
+            observer.onNext(s.drinks.value.drinks[index].price.toStringCurrency)
             return Disposables.create()
         }
     }
     
     func add(at index: Int) {
-        let drink = drinks.value.collection[index]
+        let drink = drinks.value.drinks[index]
         Cart.shared.add(cartItem: CartItem(name: drink.name, price: drink.price))
     }
 }

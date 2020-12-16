@@ -25,7 +25,7 @@ class IngredientsViewModel: ViewModel, IngredientsFielding {
         self.collectionCells = []
         collectionCells.append(IngredientCollectionViewCell(pizza: pizza))
         collectionCells.append(IngredientCollectionViewCell(title: "Ingredients"))
-        if let ingredients = pizzas.ingredients?.collection {
+        if let ingredients = pizzas.ingredients?.ingredients {
             for ingredient in ingredients {
                 collectionCells.append(IngredientCollectionViewCell(ingredient: ingredient, isIngredientSelected: self.pizza.ingredients.contains(ingredient.id)))
             }
@@ -84,7 +84,7 @@ class IngredientsViewModel: ViewModel, IngredientsFielding {
             }
             collectionCells.append(IngredientCollectionViewCell(pizza: pizza))
             collectionCells.append(IngredientCollectionViewCell(title: "Ingredients"))
-            pizzas.ingredients?.collection.forEach { item in
+            pizzas.ingredients?.ingredients.forEach { item in
                 collectionCells.append(IngredientCollectionViewCell(ingredient: item, isIngredientSelected: pizza.ingredients.contains(item.id)))
             }
             collectionViewItems.accept(collectionCells)
@@ -110,10 +110,10 @@ struct IngredientCollectionViewCell {
     
     let pizza: PizzaModel?
     let title: String?
-    let ingredient: BasicItemModel?
+    let ingredient: IngredientModel?
     let isIngredientSelected: Bool?
     
-    init(ingredient: BasicItemModel? = nil, isIngredientSelected:Bool?=false, pizza: PizzaModel? = nil, title: String? = nil) {
+    init(ingredient: IngredientModel? = nil, isIngredientSelected:Bool?=false, pizza: PizzaModel? = nil, title: String? = nil) {
         self.ingredient = ingredient
         self.isIngredientSelected = isIngredientSelected
         self.pizza = pizza
