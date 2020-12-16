@@ -9,8 +9,8 @@ import Foundation
 import RxSwift
 
 class Request<T: Codable> {
-    static func fetch(paths: [String]) -> Observable<T> {
-        return RequestBuilder(session: Session(), api: BaseApi())
+    static func fetch(session: SessionProtocol, api: ApiProtocol, paths: [String]) -> Observable<T> {
+        return RequestBuilder(session: session, api: api)
             .build(paths: paths)
             .asObservable()
     }

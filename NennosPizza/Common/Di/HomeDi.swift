@@ -17,8 +17,7 @@ class HomeDi: Di {
     override init() {
         super.init()
         register(type: HomeViewModel.self) { _ in
-            print("Called")
-            return HomeViewModel()
+            return HomeViewModel(di: ApiRequestDi())
         }
     }
 }

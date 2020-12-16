@@ -15,13 +15,9 @@ class HomeViewModel: ViewModel, HomeFielding {
     
     let pizzas: BehaviorRelay<PizzaCollection> = BehaviorRelay(value: PizzaCollection())
     
-    override init() {
+    init(di: ApiRequesting) {
         super.init()
-        let pizzasRequest = Request<PizzaCollection>.fetch(paths: ["/pizzas.json"])
-        
-        let ingredientsRequest = Request<BasicItemCollection>.fetch(paths: ["/ingredients.json"])
-        
-        Observable.zip(pizzasRequest, ingredientsRequest).map { (p, i) -> PizzaCollection in
+        Observable.zip(di.pizzasRequest, di.ingredientRequest).map { (p, i) -> PizzaCollection in
             var tempPizzas = PizzaCollection()
             tempPizzas.ingredients = i
             tempPizzas.basePrice = p.basePrice
