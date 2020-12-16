@@ -1,6 +1,6 @@
 //
-//  DIC.swift
-//  NordstromRack
+//  Di.swift
+//  NennosPizza
 //
 //  Created by Arthur Jinian on 12/14/20.
 //  Copyright © 2020 AJ. All rights reserved.
@@ -10,10 +10,6 @@ import Foundation
 import RxSwift
 
 typealias FactoryClosure = (DiContainer) -> AnyObject
-
-protocol Containerizable {
-    
-}
 
 protocol DiContainer {
     func resolve<T>(type: T.Type) -> T?
