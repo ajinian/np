@@ -15,7 +15,7 @@ class HomeViewModel: ViewModel, HomeFielding {
     
     let pizzas: BehaviorRelay<PizzaCollection> = BehaviorRelay(value: PizzaCollection())
     
-    init(di: ApiRequesting) {
+    init(di: DataRequesting) {
         super.init()
         Observable.zip(di.pizzasRequest, di.ingredientRequest).map { (p, i) -> PizzaCollection in
             var tempPizzas = PizzaCollection()
@@ -38,7 +38,7 @@ class HomeViewModel: ViewModel, HomeFielding {
         }
     }
     
-    func ingredients(at index: Int) -> Observable<String?> {
+    func ingredients(at index: Int) -> Observable<String> {
         return Observable.create { [weak self] subscriber -> Disposable in
             guard let s = self else { return Disposables.create() }
             subscriber.onNext(s.pizzas.value.ingredientNames(at: index))

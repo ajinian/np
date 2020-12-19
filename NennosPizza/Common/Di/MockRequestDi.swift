@@ -1,35 +1,29 @@
 //
-//  ApiRequestDi.swift
+//  MockRequestDi.swift
 //  NennosPizza
 //
-//  Created by Arthur Jinian on 12/15/20.
+//  Created by Arthur Jinian on 12/18/20.
 //
 
 import Foundation
 import RxSwift
 
-protocol DataRequesting {
-    var pizzasRequest: Observable<PizzaCollection> { get }
-    var ingredientRequest: Observable<IngredientCollection> { get }
-    var drinkRequest: Observable<DrinkCollection> { get }
-}
-
-class ApiRequestDi: Di {
+class MockRequestDi: Di {
     override init() {
         super.init()
         register(type: Observable<PizzaCollection>.self) { di -> Observable<PizzaCollection> in
-            FetchableApi<PizzaCollection>().fetch(params: ["pizzas.json"])
+            FetchableMock<PizzaCollection>().fetch(params: "pizzas")
         }
         register(type: Observable<IngredientCollection>.self) { di -> Observable<IngredientCollection> in
-            FetchableApi<IngredientCollection>().fetch(params: ["ingredients.json"])
+            FetchableMock<IngredientCollection>().fetch(params: "ingredients")
         }
         register(type: Observable<DrinkCollection>.self) { di -> Observable<DrinkCollection> in
-            FetchableApi<DrinkCollection>().fetch(params: ["drinks.json"])
+            FetchableMock<DrinkCollection>().fetch(params: "drinks")
         }
     }
 }
 
-extension ApiRequestDi: DataRequesting {
+extension MockRequestDi: DataRequesting {
     var pizzasRequest: Observable<PizzaCollection> {
         resolve(type: Observable<PizzaCollection>.self)!
     }

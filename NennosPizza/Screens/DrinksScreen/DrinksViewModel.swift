@@ -13,7 +13,7 @@ class DrinksViewModel: ViewModel, DrinksFielding {
     
     var drinks: BehaviorRelay<DrinkCollection> = BehaviorRelay(value: DrinkCollection())
     
-    init(di: ApiRequesting) {
+    init(di: DataRequesting) {
         super.init()
         di.drinkRequest.bind(to: drinks).disposed(by: disposeBag)
     }

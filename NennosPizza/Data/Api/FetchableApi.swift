@@ -1,45 +1,40 @@
 //
-//  RequestBuilder.swift
+//  ApiRequestFetcher.swift
 //  NennosPizza
 //
-//  Created by Arthur Jinian on 12/4/20.
+//  Created by Arthur Jinian on 12/17/20.
 //
 
 import Foundation
-
 import RxSwift
 
-class RequestBuilder {
+class FetchableApi<T: Model>: Fetchable {
     
-    private let session: SessionProtocol
-    private let api: ApiProtocol
     private var request: URLRequest
+    private var session: Session
     
-    init(session: SessionProtocol, api: ApiProtocol) {
-        self.session = session
-        self.api = api
-        request = URLRequest(url: api.baseUrl)
-        request.httpMethod = api.httpMethod.rawValue
-        request.cachePolicy = api.cachePolicy
+    init() {
+        request = URLRequest(url: URL(string: "https://doclerlabs.github.io/mobile-native-challenge")!)
+        session = Session()
     }
-    
-    func build<T: Codable>(paths: [String]? = nil) -> Single<T> {
+    func fetch(params: Any?) -> Observable<T> {
         return Single<T>.create { single in
-            self.setPaths(paths: paths)
+            if let p = params as? [String] {
+                self.setPaths(paths: p)
+            }
             let task = self.session.apiSession.dataTask(with: self.request) { (data, response, error) in
                 print(self.request.url?.absoluteString ?? "")
-                if let error = error {
-                    print(error)
-                    single(.error(error))
-                    return
-                }
+//                if let error = error {
+//                    single(.error(error))
+//                    return
+//                }
                 let decoder = JSONDecoder()
                 guard let data = data, let model = try? decoder.decode(T.self, from: data) else { return }
                 single(.success(model))
             }
             task.resume()
             return Disposables.create { task.cancel() }
-        }
+        }.asObservable()
     }
     
     private func setPaths(paths: [String]?) {
@@ -47,12 +42,6 @@ class RequestBuilder {
             paths.forEach { path in
                 self.request.url?.appendPathComponent(path)
             }
-        }
-    }
-    
-    private func setUrl(url: URL?) {
-        if let url = url {
-            request.url = url
         }
     }
 }

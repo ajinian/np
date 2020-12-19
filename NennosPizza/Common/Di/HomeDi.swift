@@ -14,10 +14,11 @@ protocol HomeFieldingViewModeling {
 }
 
 class HomeDi: Di {
-    override init() {
+    init(mockMode: Bool=false) {
         super.init()
         register(type: HomeViewModel.self) { _ in
-            return HomeViewModel(di: ApiRequestDi())
+            let di: DataRequesting = mockMode ? MockRequestDi() : ApiRequestDi()
+            return HomeViewModel(di: di)
         }
     }
 }

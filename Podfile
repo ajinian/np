@@ -12,7 +12,7 @@ target 'NennosPizza' do
   
   target 'NennosPizzaTests' do
     inherit! :search_paths
-    # Pods for testing
+    pod 'RxTest'
   end
 
   target 'NennosPizzaUITests' do

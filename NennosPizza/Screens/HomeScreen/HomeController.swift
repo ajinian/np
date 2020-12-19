@@ -12,7 +12,7 @@ import RxCocoa
 protocol HomeFielding {
     var pizzas: BehaviorRelay<PizzaCollection> { get }
     func name(at index: Int) -> Observable<String>
-    func ingredients(at index: Int) -> Observable<String?>
+    func ingredients(at index: Int) -> Observable<String>
     func productImage(at index: Int) -> Observable<UIImage>?
     func price(at index: Int) -> Observable<String>
 }
